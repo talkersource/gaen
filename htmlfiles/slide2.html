@@ -1,0 +1,52 @@
+<html>
+<head></head>
+<body>
+<big>
+<h2>GAEN - an advanced teleconferencing system</h2>
+<h3>Sabin Corneliu Buraga <tt>busaco@infoiasi.ro</tt></h3>
+<hr>
+<p><p>
+
+<h3>Original concepts and development</h3>
+
+<li><b> GSL (GAEN Simple Language)</b>
+	<ul>
+        GAEN includes a high-level scripting programming language which
+offer run commands files executed by the logged on users, user private 
+variables, test (<tt>.if</tt>) and cycle (<tt>.for</tt>) statements. 
+Using the flexible  
+<tt>.if</tt> command we can test the presence of an user, some status flags of an
+user or talker's flags etc. It's possible to iterate the execution of a 
+command using <tt>.for</tt> and <tt>.execute</tt> commands.
+</ul>
+<li><b> gsh (GAEN SHell)</b>
+	<ul>
+        A minimal set of UNIX operating system commands is available: <tt>ls,
+more, tail, grep, mkdir, cd, chmod, who, last, cp, mv</tt> etc.</ul>
+</ul>
+<li> <b>events</b>
+	<ul>
+        Some actions of the users generate an event: log-in, log-out, shout,
+broadcast of an important message and so on. For each event, the users are  
+able to associate a command to be executed when that event will occur.
+</ul>
+<li><b>user's environment</b>
+<ul>
+        The possibility to save/restore some user information flags (such as
+ignoring all tells flag, ignoring sending of pictures, the tone of the voice
+etc.) in a special file.
+</ul>
+<li><b>internal hosts file</b>
+<ul>
+        To avoid the waiting of response from name servers to obtain host
+name of a connected user, we have the facility to consult an internal file
+with IPs and host names (in the present, the hosts file counts more than 300
+entries).
+</ul>
+
+<li><b> fun</b>
+</ul>
+<hr>
+</big>
+</body>
+</html>

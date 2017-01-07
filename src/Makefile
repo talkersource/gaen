@@ -1,6 +1,6 @@
 # A simple Makefile used to directly compile GAEN sources
-# Written by Sabin-Corneliu Buraga <busaco@infoiasi.ro>
-# Version 0.4 - Last update: 17 December 2001
+# Written by Sabin-Corneliu Buraga <busaco@infoiasi.ro> (c)2001-2002
+# Version 0.5 - Last update: 18 May 2002
 
 SRC=gaen
 
@@ -27,4 +27,4 @@ unarh:
 	tar -xzf $(SRC).tgz
 
 clean:						# to remove backup files
-	rm *~
+	rm *~ ../$(SRC)d

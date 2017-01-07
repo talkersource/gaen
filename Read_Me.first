@@ -1,3 +1,4 @@
+GAEN 18.2 Read_Me.first (c)1996-2002 Sabin Corneliu Buraga <busaco@infoiasi.ro>
 
 >>>Please, read this file before you want to run GAEN talker server!
 
@@ -49,7 +50,7 @@ sections are mandatory!
 * Users are encouraged to use "./go" because this script performs 
 different checkings before GAEN server booting process. If some needed
 directories/files are not detected, the script displays some warnings.
-Please, follow the instructions provided by this script.
+Follow the instructions provided by this script, please.
 
 * You can modify the values of these parameters if you want to change 
 the connection ports (main, super users, links ports), some global 
@@ -86,7 +87,7 @@ useful information. We propose a draft set of rules for the users behavior
 (this file is "helpfiles/rules"). To see this file, type .help rules.
 
 * To shutdown the talker, type .shutdown than "y" and to reboot, use .reboot 
-command than type "y".
+command than type "y". 
 To view the log files, use .viewlog command (all log files are located in
 "logfiles/" directory). Even there are some empty directories, don't delete 
 them because they are used to store (temporary) data files! To see/modify 
@@ -123,4 +124,4 @@ Iasi 6600, ROMANIA				E-mail: busaco@infoiasi.ro
 ------------------------------------------------------------------------------
 Read my books! For details, see: http://www.infoiasi.ro/~busaco/books.html
 
-Last update: 17 December 2001
+Last update: 18 May 2002

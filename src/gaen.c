@@ -14,8 +14,8 @@
  Newsgroup: alt.talkers.nuts
 
  *****************************************************************************/
-/* Written and modified by Sabin-Corneliu Buraga (c)1996-2001 
-   (final revision: 17-December-2001)
+/* Written and modified by Sabin-Corneliu Buraga (c)1996-2002
+   (final revision: 18-May-2002)
    
    Email    : busaco@infoiasi.ro
    Home page: http://www.infoiasi.ro/~busaco/
@@ -51,12 +51,12 @@
 #include "gaen.h"
 
 #define VERSION  "3.3.3"
-#define GAEN_VER "M (18)"
+#define GAEN_VER "M (18.2)"
 #define GAENDTD_VER "1.2"
 #define GSH_VER  "2.7"
 #define GSL_VER  "4.2"
 
-#define GAEN_UPDATE "17-Dec-2001"
+#define GAEN_UPDATE "18-May-2002"
 
 /* main function */
 main (argc, argv)
@@ -119,7 +119,7 @@ main (argc, argv)
     init_connections ();
   else
     printf ("Skipping connect stage.\n");
-  check_messages (NULL, 1);
+  check_messages (NULL, CHK_MSG_BOOT);
 
 /* Run in background automatically. */
   switch (fork ())
@@ -392,12 +392,12 @@ born_maxleveluser (name)
     }
   /* write the .D file */
   fprintf (fp, "%s\n", (char *) crypt (name, PASS_SALT));
-  fprintf (fp, "%d %d %d %d %d %d %d %d %d %d\n", 0, 0, 0, 0, SGOD, 0, 0, 0,
-	   0, 0);
+  fprintf (fp, "%d %d %d %d %d %d %d %d %d %d\n",
+	   0, 0, 0, 0, SGOD, 0, 0, 0, 0, 1);
   fprintf (fp, "gaen.ro\na real ~FG~OL!!!\nenters\ngoes\n");
   fclose (fp);
-  printf ("\nGAEN: Maximum level user %s created (see '%s' file).\n", name,
-	  filename);
+  printf ("\nGAEN: Maximum level user %s created (see '%s' file).\n",
+	  name, filename);
   /* adjust the allow user files */
   for (i = MIN_LEV_ALLOW; i <= MAX_LEV_ALLOW; i++)
     {
@@ -581,7 +581,8 @@ init_hostsfile ()
     {
       if (!(fp = fopen (filename, "w")))
 	{
-	  write_syslog (LOG_ERR, "Cannot read file in add_host().\n", LOG_NOTIME);
+	  write_syslog (LOG_ERR, "Cannot read file in add_host().\n",
+			LOG_NOTIME);
 	  return;
 	}
       /* store the default IP for localhost */
@@ -619,7 +620,8 @@ add_host (siteaddr, sitename)
   fclose (fp);
   if (!(fp = fopen (filename, "a")))
     {
-      write_syslog (LOG_ERR, "Cannot append file in add_host().\n", LOG_NOTIME);
+      write_syslog (LOG_ERR, "Cannot append file in add_host().\n",
+		    LOG_NOTIME);
       return;
     }
   fprintf (fp, "%s %s\n", siteaddr, sitename);
@@ -1985,9 +1987,10 @@ init_globals ()
     {
       printf ("Warning! Cannot get talker's home directory.\n");
       write_syslog (LOG_CHAT,
-		    "Warning! Cannot get talker's home directory.\n", LOG_NOTIME);
-      write_syslog (LOG_ERR,
-		    "Warning! Cannot get talker's home directory.\n", LOG_NOTIME);		    
+		    "Warning! Cannot get talker's home directory.\n",
+		    LOG_NOTIME);
+      write_syslog (LOG_ERR, "Warning! Cannot get talker's home directory.\n",
+		    LOG_NOTIME);
     }
   event = E_NONE;
   enable_event = 1;
@@ -2056,7 +2059,8 @@ sig_handler (sig)
     case SIGTERM:
       if (ignore_sigterm)
 	{
-	  write_syslog (LOG_CHAT, "SIGTERM signal received - ignoring.\n", LOG_TIME);
+	  write_syslog (LOG_CHAT, "SIGTERM signal received - ignoring.\n",
+			LOG_TIME);
 	  return;
 	}
       write_room (NULL,
@@ -2099,7 +2103,8 @@ sig_handler (sig)
 	case 1:
 	  write_room (NULL,
 		      "\n\n\07~OLGAEN:~FR~LI WARNING - A bus error has just occured!\n\n");
-	  write_syslog (LOG_CHAT, "WARNING: A bus error occured!\n", LOG_TIME);
+	  write_syslog (LOG_CHAT, "WARNING: A bus error occured!\n",
+			LOG_TIME);
 	  longjmp (jmpvar, 0);
 
 	case 2:
@@ -2756,7 +2761,7 @@ login_user (user, inpstr)
 	      connect_user (user);
 	      if (!secure_pass (passwd))
 		write_user (user,
-			    "\n\n~EL~EL~FR~OL~LI>>>Warning! Your password is not secure! Please, change it!\n~FR~OL~LI>>>Use special characters...\n");
+			    "\n\n~EL~EL~FR~OL~LI>>>Warning! Your password is not secure! Please, change it!\n~FR~OL~LI>>>Use a combination of letters, digits and special characters.\n");
 	      return;
 	    }
 	  write_user (user, "\n\n>>>Incorrect login! :-(\n\n");
@@ -3661,7 +3666,7 @@ editor (user, inpstr)
 		   syserror);
 	  write_user (user, text);
 	  write_syslog (LOG_ERR,
-			"ERROR: Failed to allocate memory in editor().\n", 
+			"ERROR: Failed to allocate memory in editor().\n",
 			LOG_NOTIME);
 	  user->misc_op = 0;
 	  prompt (user);
@@ -3850,7 +3855,7 @@ boot_exit (code)
 
     case 2:
       write_syslog (LOG_CHAT,
-		    "BOOT FAILURE: Can't open main port listen socket.\n", 
+		    "BOOT FAILURE: Can't open main port listen socket.\n",
 		    LOG_NOTIME);
       perror ("GAEN: Can't open main listen socket");
       exit (2);
@@ -3864,13 +3869,14 @@ boot_exit (code)
 
     case 4:
       write_syslog (LOG_CHAT,
-		    "BOOT FAILURE: Can't open link port listen socket.\n", 
+		    "BOOT FAILURE: Can't open link port listen socket.\n",
 		    LOG_NOTIME);
       perror ("GAEN: Can't open info listen socket");
       exit (4);
 
     case 5:
-      write_syslog (LOG_CHAT, "BOOT FAILURE: Can't bind to main port.\n", LOG_NOTIME);
+      write_syslog (LOG_CHAT, "BOOT FAILURE: Can't bind to main port.\n",
+		    LOG_NOTIME);
       perror ("GAEN: Can't bind to main port");
       exit (5);
 
@@ -3881,7 +3887,8 @@ boot_exit (code)
       exit (6);
 
     case 7:
-      write_syslog (LOG_CHAT, "BOOT FAILURE: Can't bind to link port.\n", LOG_NOTIME);
+      write_syslog (LOG_CHAT, "BOOT FAILURE: Can't bind to link port.\n",
+		    LOG_NOTIME);
       perror ("GAEN: Can't bind to link port");
       exit (7);
 
@@ -3893,7 +3900,8 @@ boot_exit (code)
 
     case 9:
       write_syslog (LOG_CHAT,
-		    "BOOT FAILURE: Listen error on superuser port.\n", LOG_NOTIME);
+		    "BOOT FAILURE: Listen error on superuser port.\n",
+		    LOG_NOTIME);
       perror ("GAEN: Listen error on superuser port");
       exit (9);
 
@@ -4186,9 +4194,9 @@ isnumber (str)
 }
 
 /*** Get real user struct pointer from name ***/
-UR_OBJECT get_real_user (name)
-     char *
-       name;
+UR_OBJECT
+get_real_user (name)
+     char *name;
 {
   UR_OBJECT u;
 
@@ -4213,9 +4221,9 @@ UR_OBJECT get_real_user (name)
 }
 
 /*** Get exact user struct pointer from name ***/
-UR_OBJECT get_exact_user (name)
-     char *
-       name;
+UR_OBJECT
+get_exact_user (name)
+     char *name;
 {
   UR_OBJECT u;
 
@@ -4232,9 +4240,9 @@ UR_OBJECT get_exact_user (name)
 }
 
 /*** Get user struct pointer from name ***/
-UR_OBJECT get_user (name)
-     char *
-       name;
+UR_OBJECT
+get_user (name)
+     char *name;
 {
   UR_OBJECT u;
 
@@ -4263,9 +4271,9 @@ UR_OBJECT get_user (name)
 }
 
 /*** Get room struct pointer from abbreviated name ***/
-RM_OBJECT get_room (name)
-     char *
-       name;
+RM_OBJECT
+get_room (name)
+     char *name;
 {
   RM_OBJECT rm;
   int j;
@@ -4355,7 +4363,8 @@ send_mail (user, to, ptr)
     {
       write_user (user, ">>>Error in mail delivery.\n");
       write_syslog (LOG_ERR,
-		    "ERROR: Couldn't open tempfile in send_mail().\n", LOG_NOTIME);
+		    "ERROR: Couldn't open tempfile in send_mail().\n",
+		    LOG_NOTIME);
       return;
     }
 /* Write current time on first line of tempfile */
@@ -4681,7 +4690,7 @@ long_date (which)
     sprintf (dstr, "on %s %d %s %d at %02d:%02d (day %d)",
 	     day[twday], tmday, month[tmonth], tyear, thour, tmin, tday + 1);
   else
-    sprintf (dstr, "// %s %d %s %d at %02d:%02d (day %d) // ",
+    sprintf (dstr, ":: %s %d %s %d at %02d:%02d (day %d) :: ",
 	     day[twday], tmday, month[tmonth], tyear, thour, tmin, tday + 1);
   return dstr;
 }
@@ -4689,7 +4698,8 @@ long_date (which)
 /************ OBJECT FUNCTIONS ************/
 
 /*** Construct user/clone object ***/
-UR_OBJECT create_user ()
+UR_OBJECT
+create_user ()
 {
   UR_OBJECT user;
   int i;
@@ -4697,7 +4707,7 @@ UR_OBJECT create_user ()
   if ((user = (UR_OBJECT) malloc (sizeof (struct user_struct))) == NULL)
     {
       write_syslog (LOG_ERR,
-		    "GAEN: Memory allocation failure in create_user().\n", 
+		    "GAEN: Memory allocation failure in create_user().\n",
 		    LOG_NOTIME);
       return NULL;
     }
@@ -4848,9 +4858,9 @@ destruct_user (user)
 
 
 /*** Construct room object ***/
-RM_OBJECT create_room (dimension)
-     int
-       dimension;
+RM_OBJECT
+create_room (dimension)
+     int dimension;
 {
   RM_OBJECT room;
   int i;
@@ -4889,7 +4899,8 @@ RM_OBJECT create_room (dimension)
 }
 
 /*** Construct link object ***/
-NL_OBJECT create_netlink ()
+NL_OBJECT
+create_netlink ()
 {
   NL_OBJECT nl;
 
@@ -6616,7 +6627,7 @@ exec_com (user, inpstr)
       social (user);
       break;
     case RECOUNT:		/* this command was added in NUTS 3.3.3 */
-      check_messages (user, 2);
+      check_messages (user, CHK_MSG_RECOUNT);
       break;
     case REVTELL:
       revtell (user);
@@ -6808,8 +6819,10 @@ exec_com (user, inpstr)
       user_to (user, inpstr);
       break;
     default:
-      write_user (user, ">>>Command not executed in exec_com().\n>>>Please, contact the code developer at ~OLbusaco@infoiasi.ro~RS.\n");
-      write_syslog (LOG_ERR, "Warning! Command not executed in exec_com().\n", LOG_TIME);
+      write_user (user,
+		  ">>>Command not executed in exec_com().\n>>>Please, contact the code developer at ~OLbusaco@infoiasi.ro~RS.\n");
+      write_syslog (LOG_ERR, "Warning! Command not executed in exec_com().\n",
+		    LOG_TIME);
     }
 }
 
@@ -7154,7 +7167,8 @@ aliases (user)
   strcpy (user->aliases_name[user->aliases], word[1]);
   user->aliases_cmd[user->aliases] = cmd;
   user->aliases++;
-  sprintf (text, ">>>Alias ('~FG%s~RS' <- '~FG%s~RS') defined.\n", word[1], command[cmd]);
+  sprintf (text, ">>>Alias ('~FG%s~RS' <- '~FG%s~RS') defined.\n", word[1],
+	   command[cmd]);
   write_user (user, text);
 }
 
@@ -7419,9 +7433,10 @@ paintball (user)
 {
   int colour;
   UR_OBJECT u;
-  char *colnames[] = { 
+  char *colnames[] = {
     "~FRred", "~FGgreen", "~FYyellow",
-    "~FBblue", "~FMmagenta", "~FTturquiose"
+    "~FBblue", "~FMmagenta", "~FTturquiose",
+    "~~FK~BWblack", "white"
   };
 
   if (word_count < 2)
@@ -7452,7 +7467,7 @@ paintball (user)
       write_user (user, ">>>That user is ignoring everyone or is AFK.\n");
       return;
     }
-  colour = random () % 6;	/* 6 colours: red, green, yellow, blue, magenta, turquoise */
+  colour = random () % 8;	/* 8 colours = 6 + 2 */
   user->pballs--;
   sprintf (text, "~OL>>>You throw in %s with a %s~RS~OL ball!\n",
 	   u->name, colnames[colour]);
@@ -7494,7 +7509,7 @@ puzzle_com (user)
      UR_OBJECT user;
 {
   int i;
-  char moves[] = "lrfb"; /* directions: left, right, forward, backward */
+  char moves[] = "lrfb";	/* directions: left, right, forward, backward */
 
   if (word_count < 2)
     {
@@ -7771,8 +7786,7 @@ ident_request (rhost, rport, lport, accname)
        */
 
       read_count++;
-      if (
-	  (partial_nbread =
+      if ((partial_nbread =
 	   read (sockid, &inbuf[nbread], ID_BUFFLEN - nbread)) == -1)
 	{
 	  close (sockid);
@@ -7938,8 +7952,7 @@ mail_id_request (rhost, accname, email)
 
       read_count++;
 
-      if (
-	  (partial_nbread =
+      if ((partial_nbread =
 	   read (sockmail, &inbuf[nbread], ID_BUFFLEN - nbread)) == -1)
 	{
 	  close (sockmail);
@@ -7975,8 +7988,7 @@ mail_id_request (rhost, accname, email)
 
       read_count++;
 
-      if (
-	  (partial_nbread =
+      if ((partial_nbread =
 	   read (sockmail, &inbuf[nbread], ID_BUFFLEN - nbread)) == -1)
 	{
 	  close (sockmail);
@@ -8009,8 +8021,7 @@ mail_id_request (rhost, accname, email)
 
       read_count++;
 
-      if (
-	  (partial_nbread =
+      if ((partial_nbread =
 	   read (sockmail, &inbuf[nbread], ID_BUFFLEN - nbread)) == -1)
 	{
 	  close (sockmail);
@@ -8605,8 +8616,7 @@ hangman_start (user, dict)
 		  ">>>You must stop your current game, then use this command.\n");
       return;
     }
-  if (
-      (user->hangman =
+  if ((user->hangman =
        (struct hangman_struct *) malloc (sizeof (struct hangman_struct))) ==
       NULL)
     {
@@ -8853,14 +8863,15 @@ gsh_ps (user)
     {
       sprintf (text, "%s: Couldn't open tempfile.\n", syserror);
       write_user (user, text);
-      write_syslog (LOG_ERR, "gsh: Couldn't open tempfile in gsh_ps().\n", LOG_NOTIME);
+      write_syslog (LOG_ERR, "gsh: Couldn't open tempfile in gsh_ps().\n",
+		    LOG_NOTIME);
       return;
     }
   if ((dp = opendir (PROCFILES)) == NULL)
     {
       write_user (user, ">>>Fail to open proc directory.\n");
       write_syslog (LOG_ERR,
-		    "gsh: Couldn't open proc directory in gsh_ps().\n", 
+		    "gsh: Couldn't open proc directory in gsh_ps().\n",
 		    LOG_NOTIME);
       fclose (outfp);
       return;
@@ -9072,8 +9083,9 @@ gsh_who (user)
   else
     write_user (user, ">>>No one logged on.\n");
 #else
-  write_user (user, ">>>This command is not supported on this system, sorry...\n");
-#endif      
+  write_user (user,
+	      ">>>This command is not supported on this system, sorry...\n");
+#endif
 }
 
 /*** gsh: last ( show last logged on users on talker's site ) ***/
@@ -9146,8 +9158,9 @@ gsh_last (user)
   else
     write_user (user, ">>>No entries found.\n");
 #else
-  write_user (user, ">>>This command is not supported on this system, sorry...\n");
-#endif          
+  write_user (user,
+	      ">>>This command is not supported on this system, sorry...\n");
+#endif
 }
 
 /*** gsh: le ( line editor ) ***/
@@ -9506,7 +9519,8 @@ gsh_tail (user)
   fclose (fp);
   sprintf (text, "%s: Line count error.\n", syserror);
   write_user (user, text);
-  write_syslog (LOG_ERR, "gsh: Line count error in gsh_tail().\n", LOG_NOTIME);
+  write_syslog (LOG_ERR, "gsh: Line count error in gsh_tail().\n",
+		LOG_NOTIME);
 }
 
 /*** gsh: scan ( scan a directory and execute a command for each entry ) ***/
@@ -9579,7 +9593,8 @@ gsh_home (user)
     {
       write_user (user, ">>>Fail to return to talker's home directory.\n");
       write_syslog (LOG_ERR,
-		    "gsh: Fail to return to talker's home directory.", LOG_TIME);
+		    "gsh: Fail to return to talker's home directory.",
+		    LOG_TIME);
     }
   else
     write_user (user, ">>>We are now in the talker's home directory.\n");
@@ -9929,7 +9944,8 @@ list_users (user)
   if ((dp = opendir (USERFILES)) == NULL)
     {
       write_user (user, ">>>Cannot open users directory.\n");
-      write_syslog (LOG_ERR, "Failed to opendir() in list_users().\n", LOG_NOTIME);
+      write_syslog (LOG_ERR, "Failed to opendir() in list_users().\n",
+		    LOG_NOTIME);
       return;
     }
   sprintf (text, "%s/%s", MISCFILES, ULISTFILE);
@@ -9938,7 +9954,8 @@ list_users (user)
     {
       sprintf (text, "%s: failed to generate users list.\n", syserror);
       write_user (user, text);
-      write_syslog (LOG_ERR, "Failed to create file in list_users().\n", LOG_NOTIME);
+      write_syslog (LOG_ERR, "Failed to create file in list_users().\n",
+		    LOG_NOTIME);
       closedir (dp);
       return;
     }
@@ -11611,7 +11628,7 @@ allow_user (user, username, filename)
       sprintf (text, "%s: Can't open file to append.\n", syserror);
       write_user (user, text);
       write_syslog (LOG_ERR,
-		    "ERROR: Couldn't open file to append in allow().\n", 
+		    "ERROR: Couldn't open file to append in allow().\n",
 		    LOG_NOTIME);
       return;
     }
@@ -12000,17 +12017,18 @@ run_commands (user, type_command)
   show_status = user->level >= com_level[RUN];
   if (show_status)
     {
-      sprintf (text, "~FY>>>Running %s... ", filename);
+      sprintf (text, "~FY~OL>>>Running %s... ", filename);
       write_user (user, text);
     }
   if ((fp = fopen (filename, "r")) == NULL)
     {
       if (show_status)
-	write_user (user, "~FRnot found.\n");
+	write_user (user,
+		    "~OL~FRnot found~FY.\n   Use .~OLarun~RS to define a run commands file.\n");
       return;
     }
   if (show_status)
-    write_user (user, "~FGOK.\n");
+    write_user (user, "~OL~FGOK.\n");
   inpstr[0] = '\0';
   c = getc (fp);
   i = 0;
@@ -12161,10 +12179,10 @@ execute (user, inpstr)
   else
     cnt = 1;
   sprintf (text,
-	   ">>>Command \"~FT%s~RS\" sent to be executed for ~FT%s~RS - ~FG%d~RS time(s)...\n",
-	   inpstr, u->name, cnt);
+	   ">>>Command \"~FT%s~RS\" sent to be executed for ~FT%s~RS - ~FG%d~RS time%s...\n",
+	   inpstr, u->name, cnt, cnt == 1 ? "" : "s");
   write_user (user, text);
-  sprintf (text, "\"%s\" executed by %s for %s (%d times)\n", inpstr,
+  sprintf (text, "\"%s\" executed by %s for %s - %d time(s)\n", inpstr,
 	   user->savename, u->savename, cnt);
   write_syslog (LOG_COM, text, LOG_TIME);
   while (cnt > 0)
@@ -12247,7 +12265,8 @@ parameters (user)
 
   if (word_count < 3)
     {
-      write_user (user, ">>>Current values of GAEN system parameters are:\n\n");
+      write_user (user,
+		  ">>>Current values of GAEN system parameters are:\n\n");
       i = 0;
       while (params[i][0] != '*')
 	{
@@ -12953,8 +12972,7 @@ whisper (user, inpstr)
 	  if (u2->type == CLONE_TYPE || !u2->w_number || u == u2)
 	    continue;
 	  for (j = 0; j < u2->w_number; j++)
-	    if (strstr (u->name, u2->w_users[j])
-		|| strstr (u->savename, u2->w_users[j]))	/* found */
+	    if (strstr (u->name, u2->w_users[j]) || strstr (u->savename, u2->w_users[j]))	/* found */
 	      {
 		sprintf (text, "\n\t~FT%s", u2->name);
 		write_user (user, text);
@@ -13796,9 +13814,9 @@ suggest_name (name, type)
   int j, i = 0;
   char *sufix[REN_MAX_SUF] =
     { "uc", "oi", "as", "ea", "in", "na", "pi", "ron", "gaa", "os", "ups",
-      "tr", "hass", "nul", "xe", "uck", "ath", "phe", "itz", "ix",
-      "oq", "vov", "exi", "qou", "iz", "bog", "ant", "ay", "ol", "his",
-      "pul", "uva", "eban", "fy", "ob", "cio", "awa", "luss", "izd", "gee"
+    "tr", "hass", "nul", "xe", "uck", "ath", "phe", "itz", "ix",
+    "oq", "vov", "exi", "qou", "iz", "bog", "ant", "ay", "ol", "his",
+    "pul", "uva", "eban", "fy", "ob", "cio", "awa", "luss", "izd", "gee"
   };
   char voc[] = "aeiou";
   char con[] = "bcdfghijklmnpqrstvwyxz";
@@ -15243,8 +15261,8 @@ look (user)
       strcat (text, "~FRfixed~RS to ~FRPRIVATE~RS");
       break;
     }
-  sprintf (temp, " and there are ~OL~FM%d~RS message(s) on the board.\n",
-	   rm->mesg_cnt);
+  sprintf (temp, " and there are ~OL~FM%d~RS message%s on the board.\n",
+	   rm->mesg_cnt, rm->mesg_cnt == 1 ? "" : "s");
   strcat (text, temp);
   write_user (user, text);
   if (rm->topic[0])
@@ -15839,7 +15857,8 @@ pemote (user, inpstr)
 
   if (user->muzzled)
     {
-      write_user (user, ">>>You are muzzled, you cannot private emote...:-(\n");
+      write_user (user,
+		  ">>>You are muzzled, you cannot private emote...:-(\n");
       return;
     }
   if (word_count < 3)
@@ -16907,27 +16926,28 @@ who (user, people)
 		  ">>>You have no right to use .who or .people! Sorry...\n");
       return;
     }
-  showall = !(word_count >= 2 && 
-             (word[1][0] == '-' || !strcmp (word[1], "brief"))); 
+  showall = !(word_count >= 2 &&
+	      (word[1][0] == '-' || !strcmp (word[1], "brief")));
   total = 0;
   invis = 0;
   remote = 0;
   logins = 0;
   for (i = 0; i < MAX_DIMENS; i++)
     cntdims[i] = 0;
-  if (showall) 
-    {  
+  if (showall)
+    {
       if (user->login)
-        sprintf (text, "\n--->>> Current users on %s <<<---\n\n", long_date (0));
+	sprintf (text, "\n--->>> Current users on %s <<<---\n\n",
+		 long_date (0));
       else
-        sprintf (text,
-	     "\n~FB~OL---~FR>~FY>~FB>    ~FT%s~RS~FB~OL    (current users) <<<---\n\n",
-	     long_date (0));
+	sprintf (text,
+		 "\n~FB~OL---~FR>~FY>~FB>    ~FT%s~RS~FB~OL ([ current users ]) <<<---\n\n",
+		 long_date (0));
       write_user (user, text);
       if (people)
-        write_user (user,
-		"~OL~FTName		: Level   Line Ignall Visi Idle Mins Port Site/Service:Port\n\n\r");
-    }		
+	write_user (user,
+		    "~OL~FTName		: Level   Line Ignall Visi Idle Mins Port Site/Service:Port\n\n\r");
+    }
   for (u = user_first; u != NULL; u = u->next)
     {
       if (u->type == CLONE_TYPE)
@@ -17050,24 +17070,25 @@ who (user, people)
       write_user (user, text);
     }
   if (showall)
-    {  
-       sprintf (text,
-	   "\n>>>There are ~FT%d~RS visible, maybe ~FT%d~RS invisible, ~FT%d~RS remote users and ~FT%d~RS logins.\n>>>Total of about ~FT%d~RS users (total ~FT%d~RS in, ~FT%d~RS out, ~FT%d~RS swap).\n",
-	   num_of_users - invis, invis, remote, logins, total, cnt_in,
-	   cnt_out, cnt_swp);
-       write_user (user, text);
-       if (user->level > MIN_LEV_VIEWDIM)
-         {
-            write_user (user, ">>>Users in dimensions:");
-            for (i = 0; i < MAX_DIMENS; i++)
-	      {
-	         sprintf (text, " %s~RS: (~FT%d~RS)", dimens_name[i], cntdims[i]);
-	         write_user (user, text);
-	      }
-            write_user (user, "\n");
-         }
+    {
+      sprintf (text,
+	       "\n>>>There are ~FT%d~RS visible, maybe ~FT%d~RS invisible, ~FT%d~RS remote users and ~FT%d~RS logins.\n>>>Total of about ~FT%d~RS user%s (total ~FT%d~RS in, ~FT%d~RS out, ~FT%d~RS swap).\n",
+	       num_of_users - invis, invis, remote, logins,
+	       total, total == 1 ? "" : "s", cnt_in, cnt_out, cnt_swp);
+      write_user (user, text);
+      if (user->level > MIN_LEV_VIEWDIM)
+	{
+	  write_user (user, ">>>Users in dimensions:");
+	  for (i = 0; i < MAX_DIMENS; i++)
+	    {
+	      sprintf (text, " %s~RS: (~FT%d~RS)", dimens_name[i],
+		       cntdims[i]);
+	      write_user (user, text);
+	    }
+	  write_user (user, "\n");
+	}
       write_user (user, "\n");
-   }   
+    }
 }
 
 
@@ -17297,7 +17318,7 @@ wipe_board (user)
       sprintf (text, ">>>%s: couldn't open tempfile.\n", syserror);
       write_user (user, text);
       write_syslog (LOG_ERR,
-		    "ERROR: Couldn't open tempfile in wipe_board().\n", 
+		    "ERROR: Couldn't open tempfile in wipe_board().\n",
 		    LOG_NOTIME);
       fclose (infp);
       return;
@@ -17352,7 +17373,7 @@ wipe_board (user)
   else
     {
       rename ("tempfile", infile);
-      sprintf (text, ">>>%d message(s) deleted.\n", num);
+      sprintf (text, ">>>%d message%s deleted.\n", num, num == 1 ? "" : "s");
       write_user (user, text);
       user->room->mesg_cnt -= num;
       sprintf (text, "%s wiped %d message(s) from the board in the %s.\n",
@@ -17453,7 +17474,8 @@ search_boards (user)
       }
   if (cnt)
     {
-      sprintf (text, ">>>Total of ~FM%d~RS matching message(s).\n\n", cnt);
+      sprintf (text, ">>>Total of ~FM%d~RS matching message%s.\n\n",
+	       cnt, cnt == 1 ? "" : "s");
       write_user (user, text);
     }
   else
@@ -18045,7 +18067,7 @@ dmail (user)
   else
     {
       rename ("tempfile", filename);
-      sprintf (text, ">>>%d message(s) deleted.\n", num);
+      sprintf (text, ">>>%d message%s deleted.\n", num, num == 1 ? "" : "s");
       write_user (user, text);
     }
 }
@@ -18090,11 +18112,12 @@ mail_from (user, only_count)
     }
   fclose (fp);
   if (!only_count)
-    sprintf (text, "\n>>>Total of ~FM%d~RS message(s).\n\n", cnt);
+    sprintf (text, "\n>>>Total of ~FM%d~RS message%s.\n\n",
+	     cnt, cnt == 1 ? "" : "s");
   else
     sprintf (text,
-	     "\n~EL~OL--->>> You have ~FM%d~RS~OL message(s) in your mailbox. <<<---\n\n",
-	     cnt);
+	     "\n~EL~OL--->>> You have ~FM%d~RS~OL message%s in your mailbox. <<<---\n\n",
+	     cnt, cnt == 1 ? "" : "s");
   write_user (user, text);
 }
 
@@ -18116,7 +18139,7 @@ enter_profile_com (user, inpstr)
 	  sprintf (text, ">>>%s: couldn't append your profile.\n", syserror);
 	  write_user (user, text);
 	  write_syslog (LOG_ERR,
-			"ERROR: Couldn't append in enter_profile_com()\n", 
+			"ERROR: Couldn't append in enter_profile_com()\n",
 			LOG_NOTIME);
 	  return;
 	}
@@ -18258,7 +18281,7 @@ examine (user, inpstr)
   sprintf (g1, "%s", (sex[0] == 'm' || sex[0] == 'M') ? "His" : "Her");
   sprintf (g2, "%s", (sex[0] == 'm' || sex[0] == 'M') ? "he" : "she");
   sprintf (text,
-	   "~OL(Details)~RS: %s real name is ~OL~FY%s %s~RS and %s is from ~FG~OL%s~RS.\n",
+	   "~OL[Details]~RS %s real name is ~OL~FY%s %s~RS and %s is from ~FG~OL%s~RS.\n",
 	   g1, firstname, lastname, g2, country);
   write_user (user, text);
   sprintf (text,
@@ -18280,7 +18303,7 @@ examine (user, inpstr)
   else
     slevel = level;
 /* Show profile information */
-  write_user (user, "~OL(Profile)\n");
+  write_user (user, "~OL[Profile]\n");
   sprintf (filename, "%s/%s.P", USERFILES, word[1]);
   if (!(fp = fopen (filename, "r")))
     write_user (user, ">>>No profile.\n");
@@ -18315,7 +18338,7 @@ examine (user, inpstr)
       days2 = ago / 86400;
       hours2 = (ago % 86400) / 3600;
       mins2 = (ago % 3600) / 60;
-      sprintf (text, "~OL(Other info)~RS:\n>>>Level           : %s\n"
+      sprintf (text, "~OL[Other info]~RS\n>>>Level           : %s\n"
 	       ">>>Last login      : ~FG%s",
 	       level_name[slevel], ctime ((time_t *) & last_login));
       write_user (user, text);
@@ -18346,7 +18369,7 @@ examine (user, inpstr)
   else
     afk[0] = '\0';
   idle = (int) (time (0) - u->last_input) / 60;
-  sprintf (text, "~OL(Other info)~RS:\n>>>Level           : %s\n"
+  sprintf (text, "~OL[Other info]~RS\n>>>Level           : %s\n"
 	   ">>>Ignoring all    : %s\n", level_name[u->slevel],
 	   noyes2[u->ignall]);
   write_user (user, text);
@@ -18455,8 +18478,8 @@ rooms (user, show_topics)
 	    strcpy (serv, nl->service);
 	  sprintf (text,
 		   "%-20s : %11s~RS	%3d    %3d     %s   %s~RS  %s\n",
-		   rm->name, access, cnt, rm->mesg_cnt, noyes1[rm->inlink],
-		   stat, serv);
+		   rm->name, access, cnt, rm->mesg_cnt,
+		   noyes1[rm->inlink], stat, serv);
 	}
       write_user (user, text);
     }
@@ -20390,7 +20413,8 @@ terminal (user)
 	  write_user (user, ">>>You exit from blind mode.\n");
 	}
       else
-        write_user (user, ">>>You are not in blind mode, so this command is ineffective.\n");	
+	write_user (user,
+		    ">>>You are not in blind mode, so this command is ineffective.\n");
       return;
     }
   len = strlen (word[1]);
@@ -20712,7 +20736,7 @@ create_clone (user)
       sprintf (text, ">>>%s: Unable to create copy.\n", syserror);
       write_user (user, text);
       write_syslog (LOG_ERR,
-		    "ERROR: Unable to create user copy in clone().\n", 
+		    "ERROR: Unable to create user copy in clone().\n",
 		    LOG_NOTIME);
       return;
     }
@@ -21375,7 +21399,7 @@ suicide (user)
       return;
     }
   write_user (user,
-	      "\n\07~FR~OL~LI--->>> WARNING - This will delete your account! <<<---\n\n>>>Are you sure about this (y/n)? ");
+	      "\n\07~FR~OL~LI--->>> WARNING - This will delete your account! <<<---\n\n>>>Are you sure about this - your action can be irreversible (~OL~FGy~RS|~OL~FRn~RS)? ");
   user->misc_op = 6;
   no_prompt = 1;
 }
@@ -21549,7 +21573,7 @@ shutdown_com (user)
       rs_which = 0;
     }
   write_user (user,
-	      "\n\07~FR~OL~LI--->>> WARNING - This will shutdown the talker! <<<---\n\n>>>Are you sure about this (y/n)? ");
+	      "\n\07~FR~OL~LI--->>> WARNING - This will shutdown the talker! <<<---\n\n>>>Are you sure about this - your action can be irreversible (~OL~FGy~RS|~OL~FRn~RS)? ");
   user->misc_op = 1;
   no_prompt = 1;
 }
@@ -21612,7 +21636,7 @@ reboot_com (user)
       rs_which = 1;
     }
   write_user (user,
-	      "\n\07~FY~OL~LI--->>> WARNING - This will reboot the talker! <<<---\n\n>>>Are you sure about this (y/n)? ");
+	      "\n\07~FY~OL~LI--->>> WARNING - This will reboot the talker! <<<---\n\n>>>Are you sure about this - your action can be irreversible (~OL~FGy~RS|~OL~FRn~RS)? ");
   user->misc_op = 7;
   no_prompt = 1;
 }
@@ -21694,7 +21718,7 @@ do_events ()
   check_reboot_shutdown ();
   check_idle_and_timeout ();
   check_nethangs_send_keepalives ();
-  check_messages (NULL, 0);
+  check_messages (NULL, CHK_MSG_EVENT);
   autosave_details ();
   reset_alarm ();
 }
@@ -21946,7 +21970,7 @@ check_messages (user, force)
 
   switch (force)
     {
-    case 0:
+    case CHK_MSG_EVENT:
       if (mesg_check_hour == thour && mesg_check_min == tmin)
 	{
 	  if (done)
@@ -21959,7 +21983,7 @@ check_messages (user, force)
 	}
       break;
 
-    case 1:
+    case CHK_MSG_BOOT:
       printf ("Checking boards...\n");
     }
   done = 1;
@@ -21975,7 +21999,7 @@ check_messages (user, force)
 	sprintf (filename, "%s/%s.B", DATAFILES, rm->name);
 	if (!(infp = fopen (filename, "r")))
 	  continue;
-	if (force < 2)
+	if (force < CHK_MSG_RECOUNT)
 	  {
 	    if (!(outfp = fopen ("tempfile", "w")))
 	      {
@@ -21990,7 +22014,7 @@ check_messages (user, force)
 	  }
 	board_cnt++;
 	/* We assume that once 1 in date message is encountered all the others
-	   will be in date too , hence write_rest once set to 1 is never set to
+	   will be in date too, hence write_rest once set to 1 is never set to
 	   0 again */
 	valid = 1;
 	write_rest = 0;
@@ -22004,7 +22028,7 @@ check_messages (user, force)
 	      {
 		if (valid && !strcmp (id, "PT:"))
 		  {
-		    if (force == 2)
+		    if (force == CHK_MSG_RECOUNT)
 		      rm->mesg_cnt++;
 		    else
 		      {
@@ -22033,7 +22057,7 @@ check_messages (user, force)
 	    fgets (line, 82, infp);
 	  }
 	fclose (infp);
-	if (force < 2)
+	if (force < CHK_MSG_RECOUNT)
 	  {
 	    fclose (outfp);
 	    unlink (filename);
@@ -22047,11 +22071,12 @@ check_messages (user, force)
       }
   switch (force)
     {
-    case 0:
+    case CHK_MSG_EVENT:
       if (bad_cnt)
 	sprintf (text,
-		 "CHECK_MESSAGES: %d file(s) checked, %d had an incorrect message count, %d message(s) deleted.\n",
-		 board_cnt, bad_cnt, old_cnt);
+		 "CHECK_MESSAGES: %d file%s checked, %d had an incorrect message count, %d message%s deleted.\n",
+		 board_cnt, board_cnt == 1 ? "" : "s", bad_cnt,
+		 old_cnt, old_cnt == 1 ? "" : "s");
       else
 	sprintf (text,
 		 "CHECK_MESSAGES: %d file(s) checked, %d message(s) deleted.\n",
@@ -22059,15 +22084,16 @@ check_messages (user, force)
       write_syslog (LOG_CHAT, text, LOG_TIME);
       break;
 
-    case 1:
-      printf ("  %d board file(s) checked, %d out of date message(s) found.\n",
-	      board_cnt, old_cnt);
+    case CHK_MSG_BOOT:
+      printf ("  %d board file%s checked, %d out of date message%s found.\n",
+	      board_cnt, board_cnt == 1 ? "" : "s",
+	      old_cnt, old_cnt == 1 ? "" : "s");
       break;
 
-    case 2:
+    case CHK_MSG_RECOUNT:
       sprintf (text,
-	       ">>>~FG%d~RS board file(s) checked, ~FG%d~RS had an incorrect message count.\n",
-	       board_cnt, bad_cnt);
+	       ">>>~FG%d~RS board file%s checked, ~FG%d~RS had an incorrect message count.\n",
+	       board_cnt, board_cnt == 1 ? "" : "s", bad_cnt);
       write_user (user, text);
       sprintf (text,
 	       "~OLGAEN:~RS %s forced a recount of the message boards.\n",

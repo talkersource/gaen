@@ -1,0 +1,310 @@
+<html>
+<head>
+<title>GAEN</title>
+</head>
+<body text="#FFFFFF" bgcolor="#000000"
+link="#C0C0C0" vlink="#C0C000">
+
+<hr>
+<h1>GAEN - An Advanced Concurrent Teleconferencing System</h1>
+<h2><a href="http://www.infoiasi.ro/~busaco">Sabin Corneliu Buraga</a></h2>
+<p align=right>(<i>"Symposium on Automatic Control and Computer Science -
+            SACCS'98 Proceedings"</i> - November 1998, Iasi)</p> 
+<hr>
+<h4>Abstract:</h4>
+<ul>
+GAEN is an advanced concurrent teleconferencing system which facilitate easy
+and real-time communications between multiple persons. In fact, GAEN is a
+network of talkers based on Internet TCP/IP protocols suite (implemented
+with sockets). GAEN system is based on NUTS original program written by Neil
+Robertson. After two years of experiments and work, it accumulates many 
+important and useful additions: GSL script internal language, a minimal shell,
+response to events, support for natural talk: voice tones, socials and macros. 
+GAEN is implemented in standard C language under UNIX and it is distributed
+freely on Internet. There are many operational GAEN talkers used by
+students, researchers and other persons. In the present, GAEN systems are 
+running on Linux PC machines and they became very popular in 
+in the academical environments.
+</ul>
+<h4>Keywords: teleconference, concurrency, UNIX, event-driven talker, 
+	  Internet, scripts</h4>
+
+<h2>General presentation</h2>
+
+<p align=justify>
+Like any other Internet services, GAEN uses the TCP/IP protocols, implemented
+with BSD sockets. The most important GAEN services are:
+<ul>
+<li> <b>support for real-time and concurrent communications</b> between a variable
+number of persons, with facilities like private messages, multiple
+conferencing (private or public) rooms, an users ranks (levels) based system
+<li><b> electronic mail</b>: sending and receiving of electronic messages (texts)
+between the users and talkers via GAEN systems
+<li><b> remote procedures calls</b>: an user can call commands which will be executed
+on the GAEN host machine 
+<li> <b>GAEN network</b>: multiple GAEN systems can be interconnected respecting a 
+special protocol
+</ul>
+<p align=justify>
+GAEN's philosophy is simple: in fact GAEN is a server (daemon) which provide
+easy to use and powerful commands to facilitate the conversation between users
+connected to talker via clients, like telnet programs.
+GAEN needs three open ports: the main port and the auxiliary port (for the 
+administrators) are using to connect users to this teleconferencing service 
+and a netlink port is used
+for connections between similar GAEN systems. GAEN provides its own
+communication protocol used by interconnected talkers. This protocol is based 
+on a message passing interface (via netlink ports). 
+GAEN has conferencing rooms and dimensions (collections) of rooms and gives
+to each user the possibility to execute a set of commands/actions such as 
+.say, .think, .tell, .whisper, .smail etc. to express common natural human
+behaviour or to move to another room or dimension and so on (all commands
+are prefixed by a period).
+Of course, an user can talk to a particular person or a group of persons and
+he/she can use customizable macros or a built-in set of macros and social
+commands (e.g. shake hands, smiles, huggles, kisses etc.).
+
+<h2>Connecting</h2>
+<p align=justify>
+The users have a free access, but after connecting they must use .set 
+to complete their personal information (real name, age, gender, e-mail address, 
+country).
+<p align=justify>
+Also, the users can enter a profile with additional information. To connect,
+the users must use telnet and they must type the talker's address followed
+by a port (e.g. telnet vela.uaic.ro 7000).
+<p align=justify>
+At the connecting time, the user must type a name and a password (each user
+has an account, very similar with UNIX accounts). To avoid the
+hackers attacks, we use a sophisticated and efficient system to deny insecure
+(easy to guess and too simple) passwords. The users have the possibility to
+change their own passwords. The talker's administrators can change other users'
+passwords, too.
+<p align=justify>
+Following the society model, each user has a level (GUEST, SOUL, ...,
+SPIRIT, SAINT, GOD). The number of levels is nine, but it can be modified. 
+For each level, there are some commands available to use. Of course, a higher 
+level offers more commands and posibilities than an inferior one.
+<p align=justify>
+In addition, each user has a short description, some status flags (colour,
+muzzled, visibility, banned, ignoring other users and so on). Some flags and
+other information (total login time, last login time, last connecting site)
+are stored in files. For superior levels, an user has one or more clones 
+(to hear the conversation in multiple rooms).
+<p align=justify>
+Like in UNIX environments, there are commands to list all connected users
+(.who and .people), their status and profiles (.status and .examine), their
+remote host address etc. We written a command to get the real identity (the
+account and the real name) of the user, if it's possible.
+<p align=justify>
+Also, the talker provides a robuste system to send and receive mail from
+local or remote (from another linked talker) users. The users may have a
+number of restrictions (concerning the execution of certain commands: to get
+help, to review the room conversation, to be promoted or to create clones
+etc.) and a number of run commands files (a sort of scripts) which contain
+GAEN commands. These commands files can be executed by user (with .run) or
+when an event occurs.
+
+<h2>Rooms</h2>
+<p align=justify>
+Each room has a description, a short topic of conversation, the messages
+board, a review buffer of the conversation, an access: public or private and
+a state of visibility: hidden or not. Each room has links to another rooms 
+or to an external talker. The rooms' names and descriptions are loaded from
+configuration files at the boot time. We don't need to recompile the sources
+to modify the rooms links, dimensions or descriptions of rooms. We can
+specify a default topic for each room (all of these information are stored in 
+text files and loaded at the booting time). 
+
+<h2>Administration</h2>
+<p align=justify>
+A GAEN system has one or more administrators ('superior' users of highest
+level). Powerful commands assure the clever management of users: promotions 
+and demotions, the possibility to ban/unban sites and users or to delete users 
+using certain criteria, allowing users to use some facilities etc. Also, the
+administrators can view and modify the internal parameters of the talker
+using certain commands or changing the configuration files. The superior
+users can consult the talker log files, too. 
+
+<h2>Original concepts and development</h2>
+<p align=justify>
+The list of all original and advanced implemented concepts is long. 
+We'll enumerate only the most important of them:
+<ul>
+<li><b> GSL (GAEN Simple Language)</b>
+<ul><p align=justify>
+	GAEN includes a high-level scripting programming language which
+offer run commands files executed by the logged on users, user private
+variables, test (.if) and cycle (.for) statements. Using the flexible
+.if command we can test the presence of an user, some status flags of an
+user or talker's flags etc. It's possible to iterate the execution of a
+command using .for and .execute commands.
+</ul>
+<li><b> gsh (GAEN SHell)</b>
+<ul><p align=justify>
+	A minimal set of UNIX operating system commands is available: ls,
+more, tail, grep, mkdir, cd, chmod, who, last, cp, mv etc.
+</ul>
+<li><b> events</b>
+<ul><p align=justify>
+	Some actions of the users generate an event: log-in, log-out, shout,
+broadcast of an important message and so on. For each event, the users are
+able to associate a command to be executed when that event will occur.
+</ul>
+
+<li><b> user's environment</b>
+<ul><p align=justify>
+	The possibility to save/restore some user information flags (such as
+ignoring all tells flag, ignoring sending of pictures, the tone of the voice
+etc.) in a special file.
+</ul>
+
+<li><b> internal hosts file</b>
+<ul><p align=justify>
+	To avoid the waiting of response from name servers to obtain host
+name of a connected user, we have the facility to consult an internal file
+with IPs and host names (in the present, the hosts file counts more than 300
+entries).
+</ul>
+<li><b> fun</b>
+<ul>
+	<li>three interesting popular games: Hangman (two (Romanian and
+English) dictionaries of more than 7000 words each), Puzzle and Paintball
+	<li>prayers, guessing, kill fun methods
+	<li>quotes
+	<li>greetings at pre/post login time
+	<li>ASCII pictures
+	<li>renaming users and substitution of true level/site
+	<li>blackhole simulation
+</ul>
+</ul>
+<h2>Examples</h2>
+<p align=justify>
+	Some examples of commands files using GSL and gsh facilities will
+follow:
+<oL>
+<li>This script file is useful to delete all users without profiles:
+<pre>
+	.set =} userfiles
+	.gsh scan } .if !entpro { : .delete {
+</pre>
+<p align=justify>
+	The .gsh scan command scans all entries of a directory (in this
+case, the directory name is stored in a variable).
+
+<li> A script to send mail only to users who are not playing Puzzle:
+<pre>
+	.arun 0 .if !puzzle { : .smail { You don't like to play Puzzle?
+	.for 0 users
+</pre>
+<li> A backup utility script to save the user(s) files to another location:
+<pre>
+	.arun 1 .note This script expects in { the user name 
+	.arun 1 .set =} {
+	.arun 1 .note Copy in } variable because { is modified by .gsh scan 
+	.arun 1 .gsh scan userfiles .run 2
+	.arun 2 .note Copy the filename stored in { into backup directory...
+	.arun 2 .note ...if filename contains the username stored in }
+	.arun 2 .gsh cd userfiles
+	.arun 2 .if in{ } : .gsh cp { ../backup
+	.arun 2 .gsh cd ..
+</pre>
+<p align=justify>
+	We can run the commands file 1 only to backup the files of Sabin,
+Mituc and Beavis:
+<pre>
+	.for 1 Sabin Mituc Beavis
+</pre>
+<p align=justify>
+	To backup files of all connected users we just are writing:
+<pre>
+	.for 1 users
+</pre>
+<p align=justify>
+	To run the script only for an user:
+<pre>
+	.set ={ Lumi
+	.run 1
+</pre>
+<li> Some actions automatically executed when an event occurs:
+<pre>
+	.event shout .run 7
+	.arun 7 .social shake *
+	.arun 7 .tell * I'm happy, but it's not necessary to shout too much!
+	.arun 7 .macro cga
+</pre>
+<p align=justify>
+	The * variable contains the name of user who commit an event and
+.macro cga means a colorful 'Congratulations!' message.
+</ol>
+<h2>Users and distribution </h2>
+<p align=justify>
+	Without users, GAEN cannot exists. Since august 1996, we are
+continuing to experiment with some versions of GAEN. In the present, the
+GAEN teleconferencing systems are running on the sites of 'A.I.Cuza'
+University of Iasi, at the Faculty of Computer Science (<tt>fenrir.infoiasi.ro
+3300</tt>) 
+and the Faculty of Geography and Geology (<tt>vela.uaic.ro 7000</tt>) and the sites of
+'G.Asachi' Technical University of Iasi, at the Faculty of Automatic Control
+and Computer Science (<tt>hal.cs.tuiasi.ro 7777</tt>) and the Faculty of 
+Electronics
+and Telecommunications (<tt>zeta.etc.tuiasi.ro 7000</tt>). The enumerated 
+talkers
+build the GAEN system network, very popular among students and professors. 
+<p align=justify>
+	The researchers of the Institute for Information Science - Iasi
+branch are using a version of GAEN system, too (on <tt>iit.iit.tuiasi.ro
+7000</tt>).
+<p align=justify>
+	We do not have a strict control of number of installed GAEN systems
+because the sources and the additional files  are distributed freely on 
+Internet at this Web address:
+<a
+href="http://www.infoiasi.ro/~busaco/gaen/">http://www.infoiasi.ro/~busaco/gaen/</a>. 
+GAEN distribution package includes the
+source files (more than 15000 lines of code) written in standard C for UNIX systems
+(to compile them we are using the GNU C compilers), configuration, additional
+(quotes, pictures etc.) and help files. The OS/2 version of GAEN is available 
+on request.
+<p align=justify>
+	There are more than 700 frequent 15-50 aged users from Romania
+(Iasi, Bucuresti, Craiova, Brasov, Cluj, Bacau, Galati, Suceava), United
+States of America, Great Britain, Finland, Denmark, Moldova Republic, 
+Israel etc.
+<p align=justify>
+	The current version of the teleconferencing system is GAEN Goya 12, 
+which includes the changed logs files notify facility. In the future, we 
+intend to develop an AI support tool to extract the conclusions from the 
+conversation lines based on some predefined keywords.
+
+<h2>Slides</h2>
+<ul>
+<li><a href="slide1.html">Slide 1 - GAEN's services</a>
+<li><a href="slide2.html">Slide 2 - Original concepts and development</a>
+<li><a href="slide3.html">Slide 3 - Examples of GSL scripts using gsh
+facilities</a>
+<li><a href="slide4.html">Slide 4 - Capture of a OS/2 telnet session of GAEN</a>
+</ul>
+<h2>REFERENCES</h2>
+<p align=justify>
+[1] W.Richard Stevens, Advanced Programming in the UNIX Environments,
+Addison-Wesley, 1992
+<p align=justify>
+[2] Marc J.Rochkind, Advanced UNIX Programming, Prentice-Hall, New Jersey,
+1985
+<p align=justify>
+[3] K.Blakeslee, I.Sugarbread, The Evolution of Personal Computing and
+Communication, IFIP, 1994
+<p align=justify>
+[4] Andrew S.Tanenbaum, Retele de calculatoare, Computer Press Agora,
+Tg.Mures, 1997
+<p align=justify>
+[5] Charles L.Hedrick, Introduction to the Internet Protocols, CSFG, Rutgers
+University, 1987
+<p align=justify>
+[6] Jean-Marie Rifflet, UNIX - 99 exercices corigees, Ediscience, Paris,
+1996
+<p>
+<hr>
+</body>
+</html>

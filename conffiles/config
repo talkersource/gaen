@@ -1,4 +1,4 @@
-# Main config file - GAEN M (18) - (c)1996-2001 - busaco@infoiasi.ro
+# GAEN config file - GAEN M (18.2) - (c)1996-2002 - busaco@infoiasi.ro
 
 INIT:				 # global parameters - init stage 
 				 # (change some of them with .param command)
@@ -29,6 +29,7 @@ stport_level      6		 # min. level to access superior level port
 gatecrash_level   6		 # level of users who can access special skies
 crash_action      REBOOT	 # if talker is crashing, what action is exec.
 allow_caps_in_name NO		 # if username can contain capitals
+				 # additional params. added by GAEN versions
 max_hints         130		 # maximum number of hints for .hint
 max_quotes        700		 # maximum number of quotes for .quote
 def_mirror        1		 # default mirror (0=EDEN,1=GAEN,2=HELL,3=DILI)
@@ -55,10 +56,11 @@ emote_spacer	  NO		 # if add a space to each emote speech
 accept_prelog_comm YES		 # accept prelogin commands ('who','quit'...)
 allow_born_maxlev YES		 # allow to .born max-level users
  
-				 # ROOMSx section 
-ROOMS1:				 # first dimension skies
-tr Truth        kn,de,pe,ch PUB  # label Sky_name adiacent_skies access
-kn Knowledge    tr,jy PUB 
+				 # ROOMSx section (definition of maps)
+ROOMS1:				 # first dimension skies 
+				 # (original ROOMS: section in NUTS)
+tr Truth        kn,de,pe,ch PUB  # label Sky_name link_skies access
+kn Knowledge    tr,jy PUB 	 # access = PUBlic, PRIVate, BOTH
 jy Joy		kn,sa BOTH
 de Desire       tr,sa PUB 
 sa Sadness	de,jy PUB

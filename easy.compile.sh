@@ -27,7 +27,7 @@
 #	- using of "strip --strip-all" instead of "strip" without parameters
 
  
-Version="[1m[33m1.3 final ([31minternal version 1.1[33m), 19 November 2001[0m"
+Version="[1m[33m1.3.1 final ([31minternal version 1.1.1[33m), 05 May 2002[0m"
 echo;
 echo "              >>>[32mGAEN[0m [1mEasy Compile[0m Concept script<<<"
 echo;
@@ -236,8 +236,8 @@ if [ "${ERR}" = "" ]; then
 fi;
 
 
-# ...and the rest of them in 'libnsl'.
-$ECHO ">>>Searching for other [1m[36msocket[0m functions in [1m[36mnsl[0m library... "\\c;
+# ...and the rest of them (e.g. DNS manipulation routines) in 'libnsl'.
+$ECHO ">>>Searching for other [1m[36msocket/DNS[0m functions in [1m[36mnsl[0m library... "\\c;
 
 cat > /tmp/nsl.c <<EOF
 #include <stdio.h>
@@ -358,7 +358,7 @@ if [ -s "${ErrFile}" ]; then
 	echo "[33m********************************************************";
     else
 	$ECHO \\b"[1m[34mdone.";
-	echo "[0m>>>[1m[34mDone in "$Time" seconds with [1m[32mno error.";
+	echo "[0m>>>[1m[34mDone in "$Time" seconds with [1m[32msuccess.";
 fi;
 $ECHO \\b"[0m";
 

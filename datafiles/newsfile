@@ -16,13 +16,19 @@
 
 >>>For informations about ranking and promoting, see ~OL.help ranks
 
+~OL~FG--->>> GAEN M (18.2) - May 2002 <<<---
+
+	* two new 'colours' (black and white) of Paintball game munition
+	* new optimized and enhanced version of "go" bash script
+	* minor changes of GAEN sources and interface
+
 ~OL~FG--->>> GAEN M (18) - December 2001 <<<---
 
 	* .who and .people commands accept the new 'brief' parameter to show
 	  only the users information ('brief' can be substituted by '-')
 	* increased compatibility on UNIX platforms which don't support
-	  some of the facilities used by .gsh who/last. Compile GAEN sources
-	  with "make nosupport" for this
+	  some of the facilities used by .gsh who/last. 
+          Compile GAEN sources with "make nosupport" for this
  	* more 'spatiality' provided by .stereo command
 	* more hints (total of 130)
 	* minor fixes of .lusers command to correctly generate the XML files

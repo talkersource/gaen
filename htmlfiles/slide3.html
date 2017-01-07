@@ -1,0 +1,51 @@
+<html>
+<head></head>
+<body>
+<big>
+<h2>GAEN - an advanced teleconferencing system</h2>
+<h3>Sabin Corneliu Buraga <tt>busaco@infoiasi.ro</tt></h3>
+<hr>
+<p><p>
+<h3>Examples</h3>
+
+<ol>
+<li>This script file is useful to delete all users without profiles:
+<pre>
+        .set =} userfiles
+        .gsh scan } .if !entpro { : .delete {
+</pre>
+<li> A script to send mail only to users who are not playing Puzzle:
+<pre>
+        .arun 0 .if !puzzle { : .smail { You don't like to play Puzzle?
+        .for 0 users
+</pre>
+<li> A backup utility script to save the user(s) files to another location:
+<pre>
+        .arun 1 .note This script expects in { the user name
+        .arun 1 .set =} {
+        .arun 1 .note Copy in } variable because 
+			{ is modified by .gsh scan
+        .arun 1 .gsh scan userfiles .run 2
+        .arun 2 .note Copy the filename stored in 
+			{ into backup directory...
+        .arun 2 .note ...if filename 
+			contains the username stored in }
+        .arun 2 .gsh cd userfiles
+        .arun 2 .if in{ } : .gsh cp { ../backup
+        .arun 2 .gsh cd ..
+</pre>
+<li> Some actions automatically executed when an event occurs:
+<pre>
+        .event shout .run 7
+        .arun 7 .social shake *
+        .arun 7 .tell * I'm happy, 
+		but it's not necessary to shout too much!
+        .arun 7 .macro cga
+</pre>
+        The * variable contains the name of user who commit an event and
+<tt>.macro cga</tt> means a colorful 'Congratulations!' message.
+</ol>
+<hr>
+</big>
+</body>
+</html>

@@ -1,47 +1,39 @@
+                                  GAEN Advanced Talker Server
+     _____________________________________________________________________________________
 
-                        GAEN Advanced Talker Server
-     _________________________________________________________________
-                                      
-                                Latest news:
-                     GAEN M (18) version is available!
-     _________________________________________________________________
-                                      
-                                Description
-     _________________________________________________________________
-                                      
-   GAEN Talker Server is based on NUTS 3.3.3 original program and it has
-   many important and useful additions.
+                                  GAEN M (18.2) final version
+     _____________________________________________________________________________________
+
+                                          Description
+     _____________________________________________________________________________________
+
+   GAEN Talker Server is based on NUTS 3.3.3 original program and it has many important and
+   useful additions.
+
    GAEN Talker Server consists mainly in:
-
      * GAEN Dimensions - multiple skies dimensions
      * GAEN Mirror - four faces of same talker
      * GAEN Natural Chat - ability to express natural language constructs
      * GAEN Gala - advanced security, management of users
-     * GAEN Simple Language - powerful programming features: run commands
-       files, test and cycle statements, user private variables
+     * GAEN Simple Language - powerful programming features: run commands files, test and
+       cycle statements, user private variables
      * GAEN Events - event-driven talker, watch users facility
-     * GAEN Shell - minimal set of shell commands (e.g. ls, cp, more, cd,
-       chmod, grep, tail, who, stat, ps and other useful build-in UNIX
-       shell commands)
+     * GAEN Shell - minimal set of shell commands (e.g. ls, cp, more, cd, chmod, grep, tail,
+       who, stat, ps and other useful build-in UNIX shell commands)
      * GAEN Games - Hangman, Puzzle, Paintball and Fit
-     * GAEN Distribution - free distribution of GAEN sources and
-       additional files for UNIX (Linux)
-     * GAEN Easy Compile - easy compiling script for multiple UNIX
-       platforms (new faster and portable version!)
-     * GAEN Flexible - enhanced flexible features for administrating,
-       configurating and using the talker server
+     * GAEN Distribution - free distribution of GAEN sources and additional files for UNIX
+       (Linux)
+     * GAEN Easy Compile - easy compiling script for multiple UNIX platforms (new faster and
+       portable version!)
+     * GAEN Flexible - enhanced flexible features for administrating, configurating and using
+       the talker server
      * GAEN Community - regular live meetings of the users
-       
-   For a more detailed technical description of GAEN Server, please read
-   the paper: "GAEN - An Advanced Concurrent Teleconferencing System",
-   presented at SACCS'98 Symposium on Automatic Control and Computer
-   Science, Iasi, November 1998 - available in PDF format, at this URL:
-   http://www.infoiasi.ro/~busaco/publications/articles/gaen.pdf
-                                      
-                                 Facilities
-     _________________________________________________________________
-                                      
-   The following implemented concepts are original:
+
+
+                                           Facilities
+     _____________________________________________________________________________________
+
+   Original implemented concepts:
 
      * multiple dimensions
      * mirror chat
@@ -65,21 +57,20 @@
      * fun: prayers, guessing, kill methods, DILI mirror
      * internal hosts file
      * commands aliases
-     * games: Hangman - more than 7000 words in two (Romanian and
-       English) dictionaries, Puzzle, Paintball and Fit
+     * games: Hangman - more than 7000 words in two (Romanian and English) dictionaries,
+       Puzzle, Paintball and Fit
      * user notes
      * identification of users (real account and e-mail address)
      * transparency of superior users
      * command line arguments
      * superior level users notification system
-       
+
    Some additions to old NUTS commands/features are:
 
-     * more information showed by .prompt, .system, .allclones, .who,
-       .examine, .people, .status, .help, .site
-     * optional parameters accepted by .quit, .wake, .entpro, .map,
-       .kill, .logging, .clearline, .minlogin, .rmsn, .rmst, .topic,
-       .examine
+     * more information showed by .prompt, .system, .allclones, .who, .examine, .people,
+       .status, .help, .site
+     * optional parameters accepted by .quit, .wake, .entpro, .map, .kill, .logging,
+       .clearline, .minlogin, .rmsn, .rmst, .topic, .examine
      * multiple and detailed logging files
      * more parameters in config file
      * get exact/real name of users
@@ -89,11 +80,10 @@
      * global muzzle system
      * more help topics
      * new mail check and counting of mail messages facility
-     * .charecho was replaced by .terminal, .swban by .swears and .ignall
-       by .ignore (you can ignore certain users)
-     * variable number of paged lines and auto-wrapping lines on dumb
-       terminals
-       
+     * .charecho was replaced by .terminal, .swban by .swears and .ignall by .ignore (you can
+       ignore certain users)
+     * variable number of paged lines and auto-wrapping lines on dumb terminals
+
    Other interesting and useful facilities:
 
      * pre-loaded default topics
@@ -111,79 +101,58 @@
      * hackers attack security
      * dynamic change of commands' level of access
      * auto-showing hints at help facility
-     * pseudo-variables which replace some users' information at .desc,
-       .examine or .who
-     * all commands can be prefixed by / instead of .
-                                      
-                                  Sources
-     _________________________________________________________________
-                                      
-   GAEN is freeware. You may modify the code to suit your needs, but you
-   must NOT alter the credits.
-                                      
-   GAEN Distribution is freely available in the following distribution:
-   the GAEN M (18) version (August 1996 - December 2001). This version is
-   available in .tar.gz format (unpack with gunzip and tar -xf commands
-   at the UNIX shell prompt):
+     * pseudo-variables which replace some users' information at .desc, .examine or .who
+     * different script files for checking GAEN configuration and easily compiling GAEN
+       sources
 
-     * gaen_M_18.tar.gz talker files (sources, config, data, help,
-       additional files) - about 330Kb
-       
-                Enhancements and facilities in this version
+                                            Sources
+     _____________________________________________________________________________________
 
-     * .who and .people commands accept the new 'brief' parameter to show
-       only the users information ('brief' can be substituted by '-')
-     * increased compatibility on UNIX platforms which don't support
-       some of the facilities used by .gsh who/last. 
-       Compile GAEN sources with "make nosupport" for this
-     * more 'spatiality' provided by .stereo command
-     * more hints (total of 130)
-     * minor fixes of .lusers command to correctly generate the XML files
-     * minor changes of .rename command
-     * other minor modifications of internal code
+   GAEN is freeware. You may modify the code to suit your needs, but you must NOT alter the
+   credits.
 
-   For more information see datafiles/newsfile or visit 
-   the GAEN Web page: http://www.infoiasi.ro/~busaco/gaen/.
+   GAEN Distribution is freely available in the following distribution: the GAEN M (18.2)
+   version (August 1996 - May 2002). This version is available in .tar.gz format (unpack with
+   gunzip and tar -xf commands at the UNIX shell prompt):
+     * gaen_M_18_2.tar.gz talker files (sources, config, data, help, additional files) -
+       about 350K (see http://www.infoiasi.ro/~busaco/gaen/)
 
-                             Compiling advices
-                                      
-   To understand some things, you must have some familiarity with NUTS
-   and you must read first the NUTS original documentation files (not
-   included in this distribution). Then, read the documentation files
-   included within GAEN Distribution package. To compile the sources, you
-   may use easy.compile, a fast and portable shell (sh) script file
-   written by Victor Tarhon-Onu.
-                                      
-   If you prefer a direct method, type cc gaen.c -ogaend -O2 (for RedHat
-   5 or later, you must compile with -lcrypt optional parameter; for Sun
-   Solaris, -lsocket -lnsl, also), then use go (or gaend) to boot up the
-   server.
-                                      
-   Then, you must create an administration account: type gaen -b Name.
-   After this, to connect to talker server, you may use telnet localhost
-   7000, type Name as a name and Name as a password. Enjoy!
-                                      
-                                  Authors
-     _________________________________________________________________
-                                      
+                                       Compiling advices
+
+   To understand some things, you must have some familiarity with NUTS and you must read
+   first the NUTS original documentation files (not included in this distribution). Then,
+   read the documentation files included within GAEN Distribution package. To compile the
+   sources, you may use easy.compile, a fast and portable shell (sh) script file written by
+   Victor Tarhon-Onu.
+
+   If you prefer a direct method, type cc gaen.c -ogaend -O2 (for RedHat 5 or later, you must
+   compile with -lcrypt optional parameter; for Sun Solaris, -lsocket -lnsl, also), then use
+   go (or gaend) to boot up the server. We provide a simple Makefile, too.
+
+   Then, you must create an administration account: type gaen -b Name. After this, to connect
+   to talker server, you may use telnet localhost 7000, type Name as a name and Name as a
+   password. Enjoy!
+
+
+                                            Authors
+     _____________________________________________________________________________________
+
    The main authors of this software are:
 
-     * Neil Robertson: neil@ogham.demon.co.uk (UK) - the original author
-       of NUTS talker server
-     * Sabin-Corneliu Buraga: busaco@infoiasi.ro (Romania) - the actual
-       author of GAEN Advanced Talker Server
-     * Victor Tarhon-Onu: mituc@ac.tuiasi.ro (Romania) - the author
-       of some portions of GAEN code and the main author of easy.compile
-       script
-       
-   Also, thanks for help and support to Stefan Ludovic Kocsis (aka
-   Beavis), Sergiu Craciun (aka Billy), Bogdan Craciun (aka Ulen) and
-   many other persons involved in this project over the years!
-                                      
+     * Neil Robertson: neil@ogham.demon.co.uk (UK) - the original author of NUTS talker
+       server
+     * Sabin-Corneliu Buraga: busaco@infoiasi.ro (Romania) - the actual author of GAEN
+       Advanced Talker Server
+     * Victor Tarhon-Onu: mituc@ac.tuiasi.ro (Romania) - the author of some portions of GAEN
+       code and the main author of easy.compile script
+
+   Also, thanks for help and support to Stefan Ludovic Kocsis (aka Beavis), Sergiu Craciun
+   (aka Billy), Bogdan Craciun (aka Ulen) and many other persons involved in this project
+   over the years!
+
    Many thanks to Victor Tarhon-Onu (aka Mituc)!
-                                      
+
    Please, send your suggestions or report bugs to busaco@infoiasi.ro.
-     _________________________________________________________________
-                                      
-Last update: 17 December 2001 
-Designed and maintained by Sabin-Corneliu Buraga (c)1996-2001
+
+
+Last update: 18 May 2002 | Sabin-Corneliu Buraga ©1996-2002

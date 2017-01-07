@@ -1,4 +1,4 @@
-/*** Header file for NUTS version 3.3.3, GAEN M (18) version ***/
+/*** Header file for NUTS version 3.3.3, GAEN M (18.2) version ***/
 
 #define DATAFILES   "datafiles"	/* some generic filenames */
 #define USERFILES   "userfiles"
@@ -246,6 +246,10 @@
 #define CHK_SPASS_ALNUM 1
 #define CHK_SPASS_SIMIL 2
 #define CHK_SPASS_ALL 3
+
+#define CHK_MSG_EVENT	0	/* check board messages types */
+#define CHK_MSG_BOOT	1
+#define CHK_MSG_RECOUNT	2
 
 #define SAFETY_EXT 	"_"	/* used by s_unlink() */
 #define MAX_SAFETY_VAL  3333
@@ -864,8 +868,8 @@ char *soc_text_you[] = {	/* social texts send to an user */
 /* 'Spatial' voice directions (used by .say, .tell etc.) */
 #define MAX_STEREO 7
 
-char *stereo_str[] = { 
-  "", /* no direction */
+char *stereo_str[] = {
+  "",				/* no direction */
   "~OL[<] (From left...)\n",
   "~OL[-] (From center...)\n",
   "~OL[>] (From right...)\n",
@@ -1269,7 +1273,7 @@ char susers_restrict[MAX_RESTRICT + 1];
 time_t rs_announce, rs_which;	/* used by reboot/shutdown procedures */
 UR_OBJECT rs_user;		/* reboot/shutdown user */
 
-/* check some incompatibilities between Unix-flavours... */
+/* check some incompatibilities between different Unix-flavours... */
 #ifndef GAEN__NO_SUPPORT__
 #ifndef __linux
 extern char *sys_errlist[];
