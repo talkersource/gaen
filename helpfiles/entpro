@@ -1,0 +1,20 @@
+
+* entpro *
+
+Syntax: entpro [ <text> ]
+
+This command allows you to enter a lengthy description (profile) or yourself
+that people will see when they use the examine command. Since you can write
+anything you like here people tend to use it for all sorts of things. You
+can add to your profile a line if you use this command with parameters.
+
+In your profile, you can use two pseudo-variables to replace the name and
+the level of the user who examine you;
+
+~OL{name}~RS	 	will be replaced by the username who .examine you
+~OL{level}~RS 	will be replaced by the user level who .examine you
+
+Examples:
+~FTHello, {name} ! I'm glad to talk! Your level is {level}, good!
+
+See: .examine, .set 

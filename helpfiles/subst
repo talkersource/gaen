@@ -1,0 +1,14 @@
+
+* subst *
+
+Syntax: .subst [ <level> <site> [ <user> ]]
+
+	Substitute your level and site. Without parameters, only
+	show if you have a substitution file. 
+	If you don't change your level, you can enter an invalid 
+	level name. This facility gives you the possibility to 
+	substitute only your site.
+	
+	Superior users can substitute the level & site of another user.
+
+See also: .dsubst, .reality

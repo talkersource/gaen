@@ -1,0 +1,11 @@
+
+* switch *
+
+Usage: switch <sky>
+
+This allows you to swap places with one of your clones in the given sky.
+It saves you destroying the current clone, creating another in your current
+sky then moving yourself to the old clones sky.
+
+See also: .clone, .destroy, .myclones, .allclones, .csay, .chear
+

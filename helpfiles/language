@@ -1,0 +1,22 @@
+
+* language *
+
+Syntax:	language [<user>] <text_def_language>
+
+	Write to all/<user> a text which can include the international
+	language definitions:
+
+	^<symbol><character>	will generate <symbol> on <character>
+	_<symbol><character>	will generate <symbol> under <character>
+
+	Examples:                            _
+			^_a	to generate  a
+
+			_,s	to generate  s
+				             ,
+
+			^ ^     to generate  ^ itself
+
+			_ _     to generate  _ itself
+
+See also: .say

@@ -1,0 +1,6 @@
+
+* lmacros *
+
+	List all private macros defined by the user.
+
+See also: .addmacro, .umacro, .dmacro, .macro

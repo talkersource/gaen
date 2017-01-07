@@ -1,0 +1,10 @@
+
+* addmacro *
+
+
+Syntax: addmacro <macro-name> <description>
+
+	Adds a private macro to your macros list. The lenght of the
+	<macro-name> is maximum 3 characters.
+
+See also: .lmacros, .dmacros, .macro

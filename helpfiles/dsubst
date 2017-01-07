@@ -1,0 +1,10 @@
+
+* dsubst *
+
+Syntax: .dsubst [ <user> ]
+
+	Delete your substitution file. 
+	If your level is high, you can delete the substitution file of
+	<user>.
+
+See also: .subst, .reality

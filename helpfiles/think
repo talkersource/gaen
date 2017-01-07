@@ -1,0 +1,18 @@
+
+* think *
+
+Syntax: .think [<parameter>] [<text>]
+
+	This command allows you to think about something. Without any
+parameters, this command will tell everybody else that you're trying to
+think about nothing. The shortcut for .think is / sign.
+
+	When you use the optional <parameter>s:
+
+	- parameter - your thoughts will be printed backwards,
+	= parameter - your thoughts will be printed mixed,
+	| parameter - your thoughts will be printed in mixed case,
+        \ parameter - your thoughts will be printed randomly. 
+
+See also: .social, .macro, .say, .emote
+

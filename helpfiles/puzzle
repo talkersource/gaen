@@ -1,0 +1,22 @@
+
+* puzzle *
+
+Syntax: puzzle start 
+
+	Starts a new GAEN Puzzle. The goal is to sort table's numbers, using
+	only a free cell.
+
+	puzzle ?/status
+
+	Show your current status of the game.
+
+	puzzle <direction>
+
+	Moves the free cell in <direction>: 
+	l (left), r (right), f (forward), b (back)
+
+	puzzle stop
+
+	Stops GAEN Puzzle.
+
+See also: .hangman, .paintball, .fit

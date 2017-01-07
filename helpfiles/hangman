@@ -1,0 +1,21 @@
+
+* hangman *
+
+Syntax: hangman start ro/en
+
+	Starts a new GAEN Hangman. The goal is to guess a word from one of
+	two dictionaries: Romanian or English.
+
+	hangman ?/status
+
+	Show your current status of the game.
+
+	hangman <character>
+
+	Your response to guess the word.
+
+	hangman stop
+
+	Stops GAEN Hangman.
+
+See also: .puzzle, .paintball, .fit, .guess

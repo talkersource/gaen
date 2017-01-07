@@ -1,0 +1,12 @@
+
+* move *
+
+Usage: move <user> [<sky>]
+
+Moves a user directly to the chosen sky. If only <user> option is used then
+he is moved to the same sky as whoever invoked the command. The user is
+not moved if he is already in the chosen sky.
+
+See: .go, .up, .down
+
+

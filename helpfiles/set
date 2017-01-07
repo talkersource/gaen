@@ -1,0 +1,38 @@
+
+* set *
+
+Syntax:	.set <first_name> <last_name> <gender> <age> <email> <city/country>
+
+	Set important information about the user. Please complete with 
+your real data. This information will be showed by .examine command.
+
+~FG~OLExample:~RS 
+	.set John Dalglish m 33 johnd@somewhere.net London/UK
+
+* GSL - set statement *
+
+	.set ? / ?{ / ?} / var{ / var}
+
+	View or set to default the values of your { and } variables.
+
+	.set var{ / var} <word>
+
+	Assign to a variable the value <word>.
+
+	.set +{ / +} <word>
+
+	Concatenate <word> to your current value of a variable.
+
+	The <word> parameter can have two special values: ~OL_name~RS will be
+	replaced by the user's real name and ~OL_level~RS will be replaced by the
+	user's real level (0..8).
+ 
+	To test the value of this variables, use "={", "=}", "in{", "in}", 
+	"<{", ">}" conditions of .if command.
+
+~FG~OLExamples:~RS
+	.set var{ Truth
+	.set var} _level
+	.if >} 5 : .say I'm a superior user! You cannot touch me! :)
+	 
+See also: .examine, .help gsl

@@ -1,0 +1,13 @@
+
+* status *
+
+Syntax: status [<user>]
+
+	This shows you all the important stats about your login. 
+	Its self explanatory really.
+
+	Superior level users can use an additional parameter to view 
+	the status of other user.
+
+See also: .people, .examine, .reality, .identity
+

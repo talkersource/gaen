@@ -1,0 +1,21 @@
+* This program is only for sinners...
+
+USE db IN 3 ALIAS MyDataBase
+SCAN FOR name="Sabin"
+  IF 3.level=7 THEN
+    REPLACE name WITH '' REST 4
+  ENDIF
+ENDSCAN
+STORE 1 TO PaintBalls 
+* Ready to go...?
+USE db2 IN 2 ALIAS MyDataBase2 
+SCAN FOR name="*"
+  GO TO (back)
+  SELECT 3  
+  SKIP
+  SELECT 2
+  SELECT WHEREIS Sabin IN 2
+ENDSCAN
+RETURN TO gaen
+
+ 

@@ -1,0 +1,12 @@
+
+* Clone *
+
+Usage: clone [<sky>]
+
+Clone will create a clone of you in whichever sky you specify. If you give
+leave out the sky option the clone is created in the sky you are currently 
+in. The clone can then listen in to the conversation in the sky.
+
+See: .destroy, .switch, .allclones, .myclones, .csay, .chear, .crename
+
+

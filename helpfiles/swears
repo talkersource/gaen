@@ -1,0 +1,37 @@
+
+* swears *
+
+Syntax:	swears <option>
+
+The command is an extension of old .swban command and implements new
+operations with swear words file.
+
+The options are:
+
+	list		show the swear words list 
+			You can use '?' instead of 'list'.
+
+	add <word>	add a new word to file 
+			(the internal list will be updated,
+			use _ as space if you need spaces in word;
+			eg. '.swears add help_me' to ban 'help me')
+			You can use '+' instead of 'add'.
+
+	zap		remove the swear words file
+			(the internal list isn't wiped)
+
+	on		set swearing ban flag to ~FGON
+
+	off		set swearing ban flag to ~FROFF
+
+	erase <word>	erase a word from swears file
+			You can use '-' instead of 'erase'. 
+
+	reload		reload the swears file
+
+The swears file is loaded at the boot time of the talker.
+
+~OL~FRWhen an user is swearing, she or he will be punished, of course! :) 
+~OL~FRThat user will be muzzled and demoted... Be careful!
+
+See also: .ban, .unban

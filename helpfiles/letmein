@@ -1,0 +1,10 @@
+
+* letmein *
+
+Usage: letmein <sky>
+
+This sends a message to people in a private sky letting know that you
+wish to enter. Its then up to them to invite you in.
+
+See also: .public, .private, .invite
+

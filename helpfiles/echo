@@ -1,0 +1,10 @@
+
+* echo *
+
+Usage: echo <text>
+
+This is more a fun command than anything really usefull. It simply echoes
+whatever you write as the text into the sky without other users see who
+said it. You can use a dash (-) as a shortcut for .echo.
+
+See also: .emote, .pemote, .say

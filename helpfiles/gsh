@@ -1,0 +1,36 @@
+
+* gsh *
+
+Syntax: .gsh ?/<command> [ <parameters> ]
+
+	This command offers some UNIX shell tools to manipulate files and
+directories or for other purposes. To view all available commands use '.gsh ?'
+
+	<command>		meaning
+
+	ls <dir>		list all files from <dir> directory
+	mkdir <dir>		make a directory
+	rmdir <dir>		remove an empty directory
+	chdir <dir>		change directory
+	pwd			show name of current directory
+	home			return to GAEN original booting directory
+	cp <src> <dest>		copy a file
+	rm <file> [ <file>...]	remove files
+	mv <src> <dest>		move/rename files
+	ln <src> <dest> [ -s ]	link/symbolic link files
+	more <file>		show a file
+	tail <lines> <file>	show the last lines of a file
+	grep <file> <pattern>	search in a file for some pattern
+	rgrep <file> <pattern>	same as 'grep' but reversed
+	scan <dir> <command>	scan a directory and execute a command for
+				each directory's entry (the { variable will
+				be set to scanned filename)
+	le <file> add/del/ins <text>			
+				line editor (add/del/ins lines)
+	who			get logged on users on talker's site
+	last			get last logged on users on talker's site
+	chown <uid> <gid> <file>			
+				change owner's file
+	chmod <octal> <file>	change permissions' file			
+	stat <file>		get some information about a file
+

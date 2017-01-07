@@ -1,0 +1,8 @@
+
+* clsall  *
+
+Syntax:	.clsall [<user>]
+
+	Clear the screen of specified user/all inferior level users.
+ 
+See also: .cls

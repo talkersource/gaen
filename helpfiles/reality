@@ -1,0 +1,8 @@
+
+* reality *
+
+Syntax:	.reality <user>
+
+	This command shows you the real name, site, level of a user.
+
+See also: .modify, .identity, .site

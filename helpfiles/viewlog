@@ -1,0 +1,24 @@
+
+* viewlog *
+
+Syntax: viewlog [ <type> ]
+
+	View the logfiles. There are 8 logfiles:
+	 
+#     Log file type			Contains
+
+0	chat			important actions and messages
+1	err			error messages 
+2	io			logins/logouts of users
+3	com			effects of some commands
+4	link			linking to other talkers messages
+5	note			.note messages
+6	swear			swearing words and users
+7	unlink			unlinked filenames
+	
+	Default logfile is the first one. You can use as parameter a number
+of a symbolic log file type.
+	
+See also: .logging
+
+ 

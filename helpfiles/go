@@ -1,0 +1,10 @@
+
+* go *
+
+Usage: go <sky>
+
+This command moves you to another sky which must be linked to your current
+one (unless you are a superior level user).
+
+See also: .move, .up, .down
+

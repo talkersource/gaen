@@ -1,0 +1,9 @@
+
+* bcast *
+
+Syntax:	.bcast <message>
+
+	Broadcast an important message to all users. The broadcasts can not
+	be ignored.
+
+See also: .wake

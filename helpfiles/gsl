@@ -1,0 +1,79 @@
+
+~OL~BB~FG--->>> GSL language <<<---
+
+	GSL ( GAEN Simple Language ) permits you to explore deeply the
+facilities of this talker.
+
+	GSL includes user private variables ( called ~OL{~RS and ~OL}~RS variables ),
+test statement ( ~FG.if~RS ), cycle statement ( ~FG.for~RS ), running of so-called run
+commands files ( see ~FG.arun, .run, .drun~RS ).
+
+	The user variables can be used as parameters for some commands. To
+assign values for this variables use new form of ~OL.set~RS command. The ~FG.set~RS
+command can be used to assign the default values ( { for first variable and
+} for second variable ) to your variables, too. To view the variables'
+values use ~FG.set ?~RS and to concatenate to old values of variables some text use 
+~FG.set +{~RS and ~FG.set +}~RS forms.
+
+	~OL.if~RS statement permits you to execute one of your 10 run command files, 
+if a condition is true or not. The condition can be: ={, =}, user, exist, dim,
+sky, mail... Another form of the ~FG.if~RS statement is:
+~FG.if <condition> : <commands>~RS. ( see ~FG.help if~RS for more details ). 
+
+	~OL.for~RS statement uses your ~OL{~RS variable as counter to run one of 
+your 10 run commands files. At the end of for, the old value of ~OL{~RS variable is
+restored. You can execute a run commands file for each name of logged users
+( for each iteration ~OL{~RS value will store one user name ) or for each word of
+a list of words ( and ~OL{~RS value will store one word per iteration ). For
+more information, see ~FG.help for~RS.
+
+	Now, you can write 'procedures' with 'parameters': ~OL.run~RS supports 10
+run commands files! This files can be run by user with ~FG.run~RS or by 
+~FG.if~RS/~FG.for~RS commands. These run commands files can be used to execute some 
+commands when an event occurs. Also, see ~FG.help event~RS for more information 
+about this facility.
+
+~FYSome examples:
+
+	.set ?
+	.set var{ Sabin
+	.tell { Hello! How are you?
+	.set var} Green
+	.go }
+	.soc hug {
+	.set ?
+	.set var{ 7
+	.tone {
+
+	.if ={ 7 1 2
+	.if exist Ptero 5 3
+	.if minlogin 3 : .minlogin NONE
+
+	.for 3 users
+	.for 2 Ptero Beavis Ulen hihi
+	.for 2 dims
+
+	.event in .run 3
+
+	In your run commands files you can write:
+
+	.soc hug {
+	.tell { Hi! I want to kill you :)
+	.move Green {
+        .pemote { are you ok?
+	.picture rose1 {
+
+	This file ( e.g. number 7 ) can be run with a name parameter:
+
+	.set { Sabin
+	.run 7
+	.set { Roxy
+	.run 7
+	.if exist Ptero 7 0
+	.for 7 users
+
+
+See also: .set, .if, .for, .run, .event
+
+
+	

@@ -1,0 +1,8 @@
+
+* prompt *
+
+It will switch on/off the prompt indicating your username, the current
+time, current sky name, reply user and alarm state. The prompt appears after 
+each command you type.
+
+See also: .mode

@@ -1,0 +1,23 @@
+
+procedure dig_grave(i:integer; s:string); { dig_grave ? }
+var 
+  j:integer;
+  p:array[1..20] of real;
+
+
+  procedure internal; interrupt;          { dummy interrupt routine }
+  asm
+    mov ah,30
+    mov bh,20
+    int 21h
+  end;
+
+begin
+  writeln('This routine is written by C.S.B./BUSACO...');
+  for i:=1 to 20 do
+    for j:=1 to 30 do                     { a loop... }
+      begin
+        writeln(lst,s);      
+        p[i]=s[j];
+      end;
+end;

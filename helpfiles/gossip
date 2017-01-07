@@ -1,0 +1,14 @@
+
+* gossip *
+
+Syntax: gossip <level> <message>
+
+	Gossip <message> to all users of level <level>.
+	<level> is a number between 0 (= GUEST) and 8 (= SGOD).
+
+	If <level> is an invalid number, it will be set to your current
+	level.
+
+See also: .whisper, .language, .stshout
+
+

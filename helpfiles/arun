@@ -1,0 +1,14 @@
+
+* arun *
+
+Syntax: arun in/out/normal/swap/<digit> [ <command> ]
+
+	Add a command to file executed at login/logout/swap time or explicitly 
+by user ('normal' parameter). If you use <digit> you can add command to a 
+file who will be executed by .for or .if or .event commands.
+
+	If <command> is missing, then you can view the list of commands.
+	If the added command begins with # then it will be ignored 
+	(means comment in run commands file).
+
+See also: .run, .drun

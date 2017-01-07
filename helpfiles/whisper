@@ -1,0 +1,23 @@
+
+* whisper *
+
+Syntax: 
+
+	.whisper + <user1> ... <user10> 
+		This form defines a ( private ) list of users who can hear 
+		your whispers. If your whisper list is already defined, 
+		the users will be added to it.
+
+	.whisper - [<user>...]
+		Removes from the whisper list specified users. Use only
+		'.whisper -' form to remove all list.
+
+	.whisper ? [<user>]
+		Shows the users who can hear your whispers and your presence
+		in other lists. You can view the whisper list of another
+		user, if you specify <user> parameter.
+
+	.whisper <text>
+		Whispers a message to all users of the list.
+
+See also: .gossip, .tell

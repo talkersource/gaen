@@ -1,0 +1,12 @@
+
+* fit *
+
+Syntax: fit <person> [ <another_person> ]
+
+	Use this command to view the fitting (compatibility) score between
+two persons. GAEN Fit uses an ancient and sophisticated method for this
+purpose... Are you believe this? :)
+	If you omit the second parameter, the score will be calculated for
+you and the given <person>.
+
+See also: .hangman, .paintball, .guess, .puzzle

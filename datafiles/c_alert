@@ -1,0 +1,19 @@
+	write_user(user,"~FG~OLGAEN chat is copyright of ~FY~OLbusaco@thor.infoiasi.ro\n");
+	/* Add your own credits here if you have altered the code but PLEASE 
+	   leave the above credits intact. Thanks. */
+	return;
+	}
+/* Check for any illegal crap in searched for filename so they cannot list
+   out the /etc/passwd file for instance. */
+c=word[1];
+while(*c) {
+	if (*c=='.' || *c=='/') {
+		write_user(user,">>>Sorry, there is no help on that topic.\n");
+		return;
+		}
+	++c;
+	}
+sprintf(filename,"%s/%s",HELPFILES,word[1]);
+if (!(ret=more(user,user->socket,filename)))
+	write_user(user,">>>Sorry, there is no help on that topic.\n");
+if (ret==1) user->misc_op=2;

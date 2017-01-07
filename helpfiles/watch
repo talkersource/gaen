@@ -1,0 +1,12 @@
+
+* watch *
+
+Syntax:    .watch <user> [ <digit> ]
+
+         
+	You can watch a certain user. When the user is logging in,
+        you'll wake up by GAEN. If last parameter exists, the talker will
+	run <digit> commands file at logging time of watched user.
+
+See also: .lio, .lwatch, .dwatch, .run
+

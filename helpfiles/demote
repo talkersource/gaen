@@ -1,0 +1,8 @@
+
+* demote *
+
+Syntax:	.demote <user>
+
+	Allow to demote a user (decrease the user level).
+
+See also: .promote, .flash, .kill

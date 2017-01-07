@@ -1,0 +1,23 @@
+~FB~OL--->>> Main help <<<---
+Topics:      ~OL~FG.help c[ommands]~RS    shows available commands
+	     ~OL~FG.help <level>~RS       commands available for <level> (0,1,2...)
+	     ~OL~FG.help rules~RS	 talker's rules 
+	     ~OL~FG.help actions~RS	 actions listed by topic
+	     ~OL~FG.help credits~RS       some credits 
+	     ~OL~FG.help user~RS 	 general information about users
+	     ~OL~FG.help ranks~RS	 informations about levels and promotions
+	     ~OL~FG.help gsl~RS           GSL language help		
+	     ~OL~FG.help colours~RS       colour codes in your messages
+             ~OL~FG.help pictures~RS      available pictures for .picture
+             ~OL~FG.help macros~RS        available macros for .macro
+	     ~OL~FG.help countries~RS	 info about the country codes
+
+Short-cuts:  ~OL>~RS tell        ~OL;~RS emote        ~OL=~RS social    ~OL`~RS   who
+             ~OL!~RS shout       ~OL<~RS pemote       ~OL\~RS to        ~OL?~RS   help
+             ~OL-~RS echo        ~OL#~RS semote       ~OL'~RS csay      ~OL? c~RS help commands
+             ~OL$~RS macro       ~OL/ ~RSthink        ~OL[~RS reply 
+
+~FY~OL>>>All entered commands can be abbreviated (eg: .w instead of .who). 
+~FY~OL>>>Any command is prefixed by . or / except short-cuts. 
+~FG~OL>>>Send your comments to ~LIbusaco@infoiasi.ro~RS~FG~OL.
+~FG~OL>>>Visit GAEN Web page: http://www.infoiasi.ro//~busaco/gaen/

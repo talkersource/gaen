@@ -1,0 +1,98 @@
+
+* GSL - If statement *
+
+Syntax:  .if <condition> <digit1> <digit2>
+	
+	If <condition> is TRUE then it will be run commands file <digit1>, 
+	else commands file <digit2>.
+
+	.if <condition> : <command>
+
+	This second form permits you to execute <command> if <condition> is 
+	true. You can use as a prefix of condition the exclamation mark "!" 
+	to invert the value of a condition (! means 'not').
+
+  The <condition> can be:
+	={ <value>    		compare { variable with <value>
+        =} <value>    		compare } variable with <value>
+	=* <value>		compare event variable with <value>
+        in{ <value>	        true if <value> is a substring of { variable
+        in} <value>	        true if <value> is a substring of } variable    
+	in* <value>		true if <value> is a substring of event var.
+	<{ <value>		test if numerical value of { is < than <value>
+	<} <value>		test if numerical value of } is < than <value>
+	<* <value>		test if numerical value of * is < than <value>
+	>{ <value>		test if numerical value of { is > than <value>
+	>} <value>		test if numerical value of } is > than <value>
+	>* <value>		test if numerical value of * is > than <value>
+        user <user>   		test if <user> is logged on
+	exist <name>  		test if <name> is a name of existing user
+	muzzle <user>		test if <user> is muzzled
+	invis <user>		test if <user> is invisible
+	set <user>		test if <user> has set details
+	profile <user>		test if <user> has a profile file
+	subst <user>		test if <user> has a substitution file
+	afk <user>		test if <user> is AFK
+	reply <user>		test if your reply user is <user>
+	renamed <user>		test if <user> is renamed
+	ignall <user>		test if <user> is ignoring all messages
+	igntell <user>		test if <user> is ignoring tells
+	ignshout <user>		test if <user> is ignoring shouts
+	ignpict <user>		test if <user> is ignoring pictures
+	mail <user>		test if <user> has mail
+	newmail <user>		test if <user> has unread (new) mail
+	here <user>		test if <user> is in same sky with you
+	stereo <user> 		test if <user> has stereo voice set
+	dim <dim>    		test if user dimension is <dim>
+	sky <sky>     		test if user is in <sky>
+	board <sky>		test if there are board messages on <sky>
+	topic <sky>		test if <sky> has set a topic
+	hidden <sky>		test if <sky> is hidden
+	fixed <sky>		test if <sky> is fixed
+	private <sky>		test if <sky> is private
+	hasaccess <sky>		test if you have access to <sky> 
+	safety on/off		test if safety facility is set/reset
+	toutafks on/off		test if time out afks flag is set/reset
+	banswear on/off		test if ban swearing flag is set/reset
+	minlogin <level>	test if min login level is set to <level>
+	event <number>		test if event <number> is occured (-1=none,
+				0=in,1=out,2=shout,3=bhole,4=bcast,5=kill,
+				6=mirror,7=afk,8=noafk,9=swear,10=swap)
+	file <filename>		test if <filename> exists & it's readable
+        mirror EDEN/GAEN/HELL/DILI   test if talker is in specified state
+        restrict <restric_str>  test if you have <restric_str> restrictions
+	secure <word>		test if <word> is a secure password
+	alarmhour <hour>	test if your alarm hour is <hour>
+	alarmmin <min>		test if your alarm minute is <min>
+	hangman <user>		test if <user> is playing Hangman
+	puzzle <user>		test if <user> is playing Puzzle
+	pballs <number>		test if your Paintball munition = <number>
+	yearday <number>	test if <number> = day of the year
+	weekday <number>	test if <number> = day of the week (0-6)
+	hour <number>		test if <number> = current hour
+	min <number>		test if <number> = current minute
+	month <number>		test if <number> = current month
+	day <number>		test if <number> = current day
+	year <number>		test if <number> = current year
+	level0 <user>		test if <user> has level 0
+	level1 <user>		test if <user> has level 1
+	level2 <user>		test if <user> has level 2
+	level3 <user>		test if <user> has level 3
+	level4 <user>		test if <user> has level 4
+	level5 <user>		test if <user> has level 5
+	level6 <user>		test if <user> has level 6
+	level7 <user>		test if <user> has level 7
+	level8 <user>		test if <user> has level 8
+	female <user>		test if <user>'s gender is female
+	male <user>		test if <user>'s gender is male
+
+	Some options works only if the user is logged on or the user is not
+remote. For some options, you must type the full (complete) user name. 
+For 'board' use the full (complete) sky name.
+
+Examples: .if minlogin 3 : .minlog 4
+	  .if !hangman Dok 0 1
+	  .if board Truth : .read Truth
+	  .if <{ 9 : .set var{ 9
+
+See also: .if, .run, .help gsl

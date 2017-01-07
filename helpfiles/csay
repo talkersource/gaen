@@ -1,0 +1,12 @@
+
+* csay *
+
+Usage: csay <sky>
+
+Will make one of your clones in the given sky speak. If you see something
+nasty being said in the clones sky its an alternative to shouting, telling
+or actually going to the sky to admonish the miscreant. The short-cut for
+this command is the ' sign.
+
+See: .clone, .destroy, .allclones, .myclones, .chear, .switch
+

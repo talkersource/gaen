@@ -1,0 +1,7 @@
+* promote *
+
+Syntax:	.promote <user>
+
+	Allow to promote a user ( increase user level ).
+
+See also: .demote

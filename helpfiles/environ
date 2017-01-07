@@ -1,0 +1,16 @@
+
+* environ *
+
+Syntax: environ load/save/erase [<digit>]
+
+	Load or save your environment: current sky name, say/tell tones,
+	stereo flag, dimension, visibility flag, ignore picture, 
+	ignore all users/shouts/tells flags, # of paged lines and wrap and
+	hint at help flags. 
+
+	You can save/load different environment files, by using the
+	additional <digit> parameter.
+
+	To erase an environment file, use "erase" option.
+
+See also: .run, .arun, .drun

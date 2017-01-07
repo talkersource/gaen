@@ -1,0 +1,9 @@
+
+* identify *
+
+Syntax: .identify <user>/<line>
+
+Use this command to identify the real account & e-mail address of a
+connected/login staged user.
+
+See also: .reality

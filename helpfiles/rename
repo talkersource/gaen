@@ -1,0 +1,16 @@
+
+* rename *
+
+Syntax:  rename [ list / ? / ?? / ~ / <new_name> ]
+
+	You can change your name!
+        If type this command without parameters you return to old identity.
+	
+	If you use the ? parameter, you'll get a randomly computer-generated
+	name. If you use the ?? parameter, you'll get a randomly
+	computer-generated name based on your original name.	
+	You can use the ~ parameter, to get your reversed original name.
+	
+	Use 'list' parameter to list all renamed users.
+
+See also: .crename, .reality

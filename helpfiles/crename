@@ -1,0 +1,9 @@
+
+* crename *
+
+Syntax:  crename <sky clone is in> [<new_name>]
+
+	You can change your clone name! Without last parameter, your clone
+will return to the original name.
+
+See also: .clone, .rename

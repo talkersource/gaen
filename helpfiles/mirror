@@ -1,0 +1,10 @@
+
+* mirror *
+
+Syntax:	mirror [ <name> ]
+
+	This command switch to next mirror (EDEN -> GAEN -> HELL -> DILI).
+	If you use the optionally parameter <name> you can switch to mirror
+<name> directly. The mirror name can be abbreviated ('e' or 'E' instead of
+EDEN etc.). Each mirror has another level names. The DILI mirror is a joke:
+the execution of commands will be dizzy... :) 

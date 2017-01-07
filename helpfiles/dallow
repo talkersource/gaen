@@ -1,0 +1,10 @@
+
+* dallow *
+
+Usage: dallow <level>/all <user> 
+
+This command deletes <user> from allow file (for SAINTs or higher levels).
+To delete the user from all allow files use 'all' option.
+
+See also: .allow
+ 

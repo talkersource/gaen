@@ -1,0 +1,10 @@
+
+* quote *
+
+	This shows a randomly quote.
+
+	If you want to view a favourite quote, type .quote <number>, where
+<number> is the number of desired quote.
+
+See also: .hint, .help
+

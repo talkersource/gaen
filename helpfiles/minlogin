@@ -1,0 +1,15 @@
+
+* minlogin *
+
+Usage: minlogin NONE/<user level> [ keep ]
+
+This sets the minimum login level of a user that can log in. This directly
+affects the main port but only affects the saint port if it is set higher than
+the saint_port login level. If set to NONE then anyone can log in and new users
+can be created, if set to GUEST no new accounts can be created but users of
+level GUEST can still log in. If set to SOUL then only users of level SOUL and
+above can log in and so on...
+
+Use 'keep' option if you want to keep users of level below minlogin level.
+
+See also: .param, .demote

@@ -1,0 +1,9 @@
+
+* macro *
+
+Syntax: macro [<macro_name>]/?
+	
+	This command provide some macros for common speech.
+	Use ? to view all macro names.
+
+See also: .help macros, .addmacro

@@ -1,0 +1,9 @@
+
+* reply *
+
+
+Syntax: reply [ <message> ]
+
+	Reply a <message> to last user who told you something.
+
+See also: .tell, .whisper, .gossip

@@ -1,0 +1,11 @@
+
+* tell *
+
+Usage: tell <user> <message>
+
+This allows you to speak privately to another user without having to
+find a private sky.
+
+See also: .say, .shout, .pemote, .whisper, .gossip
+
+

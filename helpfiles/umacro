@@ -1,0 +1,9 @@
+
+* umacro *
+
+Syntax: umacro <macro-name>
+
+	The user says one of his/her defined macros.
+
+See also: .macro, .addmacro, .lmacro, .dmacro
+

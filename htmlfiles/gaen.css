@@ -1,0 +1,50 @@
+/* Cascading Style Sheet used in the GAEN Talker Server page
+   Faculty of Computer Science, "A.I.Cuza" University of Iasi, Romania
+   
+   (written by Sabin Corneliu Buraga - busaco@infoiasi.ro)
+*/   
+
+body { 
+  font-family: Tahoma, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+
+h1, h2, h4 { 
+  font-weight: 900;
+  font-family: Tahoma, Arial, Verdana, Helvetica, sans-serif;
+}
+  
+h5, h6 {
+  font-family: Tahoma, Arial, Verdana, Helvetica, sans-serif;
+}
+  
+a { 
+  font-weight: 800; 
+  text-decoration: none;
+  font-family: Tahoma, Arial, Verdana, Helvetica, sans-serif;
+}
+
+@media screen { /* hide from IE 3 */
+a:hover {
+  color: rgb(200,250,210);
+  text-decoration: underline;
+}
+}
+
+p { 
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  font-size: 12pt;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+hr {
+  color: rgb(74,74,74);
+}  
+
+pre, tt, code {
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  color: rgb(174,244,174);
+  font-size: 11pt;
+}  
+ 

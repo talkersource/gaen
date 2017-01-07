@@ -1,0 +1,12 @@
+
+* site *
+
+Usage: site <user>
+
+This shows you the internet address from which the given user is logging
+in from. In addition, you can see the login port of the user and the idle
+time.
+
+See also: .people, .reality
+
+

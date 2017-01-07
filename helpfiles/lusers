@@ -1,0 +1,29 @@
+
+* lusers *
+
+Syntax:	lusers ?/all/<condition>
+
+	This command lists talker's users for some criteria.
+
+	<condition> is:
+
+	name <name> 	match name (if <name> is omitted, default value is
+			the user's name)
+	level <digit>	<digit> level users (if <digit> is omitted, default
+			value is the user's level)
+	site <site>	last connecting site <site> (if it's omitted,
+			default value is the user's site)
+	email <e-mail>  e-mail address <e-mail> (default '.ro')
+	ident <name>	match real name (if <name> is omitted, default value
+			is 'Anonymous')
+
+	To view all talker's users use 'all' option. To view available
+	conditions, type .lusers ?
+
+ 	Also, this command create a SGML/XML document file named 
+	'users_list@*.xml' in miscfiles/ directory. 
+	The Document Type Definition (DTD) file used by this document is
+	stored in 'gaen.dtd' file (see /helpfiles/gaen.dtd).
+
+See also: .who, .people, .sweep
+

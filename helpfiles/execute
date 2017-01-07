@@ -1,0 +1,9 @@
+* execute *
+
+Syntax: execute <user> [<number>] <command>
+
+	Execute <command> for the specified <user> for <number> times.
+        If <number> missing, the command will be executed only once.
+	Don't use this command too much... :)
+
+See also: .run

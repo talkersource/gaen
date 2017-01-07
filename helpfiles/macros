@@ -1,0 +1,35 @@
+~FG--->>> Available macros <<<---
+
+macro-name			      description
+   ha		   Hello all!
+   by		   Bye, I must go! See you later...
+   gm		   Good morning!
+   gd		   Good day!
+   ga		   Good afternoon!
+   gn		   Good night!
+   ge		   Good evening!
+   is		   I'm sorry... :-(
+   hp		   I'm happy now! :-)
+   vi		   This is very important, listen:
+   hl		   Help me, please.
+   co		   It's very cool!
+   un		   I don't understand what you say...
+   ws		   I wish to ask you something:
+   hd		   How do you do?
+   cga		   Congratulations!
+   sa		   You bet! You can say that again! COOL!
+   ta		   You bet! You can think that again! COOL!
+   sha		   You bet! You can shout that again! COOL!
+   sia		   You bet! You can sing that again! COOL!
+   bl		   Life is beautiful!!!  that's COOL!
+   agr             I agree this idea! I agree!!
+   dag             I disagree this point of view! 
+   nc		   Yeah! This chat RULZ!!!  that's COOL!
+   cat		   I'm just climbing on the walls like a real stupid cat!
+   pud		   I want to puddle all day in this garden... :)
+   th		   I'm very thirsty! You have some drink?
+   tk		   Sorry, today I talked a lot of rubbish... Forget me!
+   lag		   It's too slow for me! LAG!?
+   es              ??
+
+See also: .macro

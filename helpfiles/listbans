@@ -1,0 +1,10 @@
+
+* listbans *
+
+Usage: listbans sites/users
+
+This will list all the sites or all the users currently banned from logging
+in.
+
+See also: .ban, .unban
+

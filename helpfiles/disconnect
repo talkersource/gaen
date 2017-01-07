@@ -1,0 +1,9 @@
+
+* disconnect *
+
+Usage: disconnect <sky>
+
+	Bring down the netlink in a sky.
+
+See also: .connect
+

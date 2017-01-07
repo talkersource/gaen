@@ -1,0 +1,8 @@
+
+* dmacro *
+
+Syntax: dmacro <macro-name> / all
+
+	The command deletes some private macros defined by the user.
+
+See also: .addmacro, .lmacro, .macro

@@ -1,0 +1,10 @@
+
+* hide *
+
+Syntax: hide [ <sky_name> [ board ]]
+
+	Hide an existing sky. A hidden sky is not visible/accessible at
+.who, .look, .go, .letmein etc.
+	Use the 'board' option to hide only the message board of the sky.
+
+See also: .show, .private, .public, .look

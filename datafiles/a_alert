@@ -1,0 +1,20 @@
+
+assume 	cs: code
+	ds: data
+	es: data
+myvars  db 19, 74, 33
+
+start:
+	mov al,ax
+	mov bl,bh
+	xor ax,ax
+	int 21h
+	cmp al,20
+	jne et1
+et2:	mov cx,77
+	loop et2:
+et1:
+	nop
+	push ax
+	push bx
+	

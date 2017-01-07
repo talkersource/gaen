@@ -1,0 +1,11 @@
+
+* revclr *
+
+Syntax: revclr [ <sky> ]
+
+	This clears the conversation buffer of a sky. If the sky name is
+	missing, then the current sky's conversation buffer is cleared.
+
+See also: .review
+
+

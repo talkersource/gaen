@@ -1,0 +1,62 @@
+
+~BB~OL--->>> Actions (commands) listed by topic <<<--- 
+
+~FT~OL* communication:
+	.say	.tell	.emote	.shout	.pemote	.semote	.mshout	.think
+	.sing	.whisp	.gossip .pict	.revtel .revpic .macro	.stshout
+	.bcast	.social .btell	.reply	.language
+
+~FT~OL* users:
+	.examine	.who		.people		.lio	
+	.reality 	.status		.listafks	.wake	
+
+~FT~OL* mail:
+	.rmail		.smail		.dmail		.from
+
+~FT~OL* skies:
+	.look	.read	.write	.search	.wipe	.fix	.unfix	.private
+	.review .revclr .show	.hide	.topic	.rmst	.rmsn	.public
+
+~FT~OL* movements:
+	.go	.up	.down	.invite	.move	.home	.letmein
+
+~FT~OL* user private parameters:
+	.mode	.prompt	.ignore	.ignpic	.igntel	.ignsho	.desc	.passwd
+	.inphr	.outphr	.subst	.dsubst	.afk	.cls	.alarm	.rename
+	.watch	.lwatch	.dwatch	.lock	.accreq	.alert	.tone	.addmacro
+	.lmacro .dmacro .umacro .stereo .set 	.entpro .events .environ
+	.aliase .terminal
+
+~FT~OL* clones:
+	.clone		.csay		.chear		.switch
+	.destroy	.allclones	.crename	.myclones
+
+~FT~OL* netlinks:
+	.connect	.disconn	.rstat		.netdata
+	.netstat	
+
+~FT~OL* administration:
+	.reboot		.shutdown	.muzzle		.unmuzzle
+	.param		.kill		.delete		.flash
+	.promote	.demote		.restrict	.execute
+	.die		.born		.modify		.sweep
+	.clearline	.ban		.unban		.listbans
+	.viewlog	.logging	.minlogin	.swears
+	.gsh		.lusers		.scommands
+
+~FT~OL* log off:
+	.quit	.suicide
+
+~FT~OL* information & help:
+	.help	.news	.map	.hint	.system		.version
+
+~FT~OL* GAEN Simple Language:
+	.if	.for	.run	.arun	.drun
+
+~FT~OL* fun:
+	.guess		.pray		.puzzle		.quote
+	.hangman	.paintball	.blackhole	.mirror
+	.fit
+
+See also: .help commands, .help user
+

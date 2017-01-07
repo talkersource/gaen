@@ -1,0 +1,23 @@
+
+* social *
+
+Syntax:	.social <command> [<user>]
+
+	<command>:
+
+		huggle		wink	     smile	cuddle
+                kiss            sing	     box	fondle
+                wkiss		khand        wash	giggle
+                shake    	pie          control	snap
+                dig		cut          warn	punch
+                chase		tea          heart	wave
+                humile          beer         scoff    	play
+		water		wine	     torture	propose
+		bomb		mew	     dance	promise
+		feed		lick	     scratch	grin
+		flowers 	accuse	     bite	wish
+
+	Show social speaks to a specific user or all users.
+	The social commands can be abbreviated.
+
+See also: .macro, .umacro

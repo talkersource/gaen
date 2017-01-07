@@ -1,0 +1,7 @@
+
+* revtell *
+
+This will show the last few lines of your private conversation (all .tells,
+.pemotes, .whispers, .replies).
+
+See also: .review, .tell, .reply, .pemote, .whisper

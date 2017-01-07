@@ -1,0 +1,126 @@
+
+>>>Please, read this file before you want to run GAEN talker server!
+
+   THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR
+   IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+   DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+   (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+   IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+   POSSIBILITY OF SUCH DAMAGE.
+
+* If you have no familiarity with NUTS-like talkers, please read first 
+the documentation files from "DOCS/" directory of NUTS 3.3.3 package 
+(not included in this distribution).
+
+* First, you must compile sources files "gaen.c" and "gaen.h" to obtain 
+the executable (server) GAEN file. These files are stored into "src/" directory.
+
+* This version provides an easy to use shell script called "easy.compile" 
+(written by Victor Tarhon-Onu) to compile without problems the GAEN sources 
+on multiple UNIX (Linux) platforms. If you prefer a direct method, 
+you may use this command line: "gcc gaen.c -O -ogaend" (or cc if you 
+don't have gcc). For Linux Red Hat 5.x or later (or for others UNIX versions), 
+you must add "-lcrypt" parameter to include the crypt library, and 
+for SUN Solaris, "-lsocket -lsl" parameters, too. We recommend to use 
+the "easy.compile" script. Also, we provide a simple Makefile to easily 
+compile GAEN sources. Just enter "src/" directory (use "cd src"), 
+then type "make".
+
+* If compiling process don't succeed and you are received an error message
+like this "USER_PROCESS is not defined" or "ut_type is not defined", then
+your system has no support for some of the system-dependent GAEN facilities
+(such as .gsh who command). Just enter "src/" directory, 
+then type "make nosupport" to disable these facilities. 
+
+* After compiling (using easy.compile script or other method), 
+type "./go" or "./gaend -c config". The configuration file called 
+"config" is located in "conffiles/" directory and it's mandatory to start 
+the GAEN server. This text file contains some values for certain parameters 
+used to configure the program (GAEN server). 
+The config file is structured in the following sections: 
+INIT:, ROOMSx: SITES:. The INIT: and ROOMSx: (where x is 1, 2 and 3) 
+sections are mandatory! 
+
+* Users are encouraged to use "./go" because this script performs 
+different checkings before GAEN server booting process. If some needed
+directories/files are not detected, the script displays some warnings.
+Please, follow the instructions provided by this script.
+
+* You can modify the values of these parameters if you want to change 
+the connection ports (main, super users, links ports), some global 
+initializations, the skies names and dimensions etc. The description and 
+default topic of the skies are stored in files located in "datafiles/" 
+directory. The sky (room) description filename is suffixed by .R and 
+the sky topic filename is suffixed by .T (e.g. "Truth.R" and "Truth.T"). 
+In this directory you can see other files used by server in certain moments: 
+.B files contains the board messages for a sky (e.g. "Truth.B"), 
+"allow.6" and "allow.7" files contain the users names who can have 
+superior levels (SAINT and GOD), "hostfile" keeps the pairs 
+(ip-hostname) used at the connecting time, "siteban" and "userban" files 
+contain the name of the banned sites and users, "*_alert" files are 
+using by .alert command, and ".swear" file contains the banned words 
+(swears).
+
+* After server booting, you may want to create an administration account 
+to control the activities of the users and the GAEN program. For this, 
+type "gaend -b Name", where Name is an account name (use only letters), and 
+the program will born a super-user in "userfiles/" directory. (Example: 
+"./gaend -b Master") Then, you can connect to talker using "telnet 0 7000" 
+(use another port instead of 7000 if the connection ports in 
+config file are modified; 0 means localhost), type Name as a name and Name 
+as a password (in our example, Master as a name and Master as a password) 
+and you'll be able to control and to administrate the talker. We recommend 
+to change first your own password using .passwd command (don't forget 
+to type special characters - non-letters and non-digits).
+
+* All commands are prefixed by a period (".") or a slash ("/"). 
+For the beginning, type .help to see the main help (all help files are 
+stored in "helpfiles/" directory). Read "Read_me" file, too. Some commands 
+have abbreviations (shortcuts). Read .help credits and .help user for other 
+useful information. We propose a draft set of rules for the users behavior 
+(this file is "helpfiles/rules"). To see this file, type .help rules.
+
+* To shutdown the talker, type .shutdown than "y" and to reboot, use .reboot 
+command than type "y".
+To view the log files, use .viewlog command (all log files are located in
+"logfiles/" directory). Even there are some empty directories, don't delete 
+them because they are used to store (temporary) data files! To see/modify 
+the talker internal parameters, type .system and .param commands.
+
+* The pre-login and the post-login messages files are stored in "msgsfiles/" 
+directory. The "pictfiles/" directory contains the picture (ASCII) files used
+by .picture command. The "hintfiles/" directory keeps all hints files used
+by .hint and the "quotefiles/" directory contains all quotes files used by
+.quote command. Extra messages showed by .kill methods are stored in 
+"killfiles/" directory. The dictionaries (Romanian and English) used by
+GAEN Hangman game are located in "dictfiles/". The "miscfiles/" directory 
+will contain the output of some commands: .lusers, .gsh who or .gsh last 
+for later use. The output of .lusers command consists of two types of files:
+plain text and XML (Extensible Markup Language) format. The DTD (Document
+Type Definition) file for XML output files is stored in "helpfiles/gaen.dtd".
+
+* Please, report bugs or make suggestions by sending an e-mail at this
+address: Sabin-Corneliu Buraga <busaco@infoiasi.ro>.
+
+* For further information and updated versions, visit the GAEN Distribution 
+Web page at http://www.infoiasi.ro/~busaco/gaen/. Enjoy!
+
+* Many thanks to: 
+	Victor Tarhon-Onu	<mituc@ac.tuiasi.ro>
+	Stefan Ludovic Kocsis	<skocsis@uaic.ro>
+
+Sabin Corneliu Buraga				http://www.infoiasi.ro/~busaco
+------------------------------------------------------------------------------
+Department of Computer Science			Phone:  +040-32-201529
+'A.I.Cuza' University					+040-32-201090
+Berthelot Str., 16	
+Iasi 6600, ROMANIA				E-mail: busaco@infoiasi.ro
+------------------------------------------------------------------------------
+Read my books! For details, see: http://www.infoiasi.ro/~busaco/books.html
+
+Last update: 17 December 2001

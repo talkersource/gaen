@@ -1,0 +1,37 @@
+
+* restrict *
+
+Syntax:	.restrict <user> [<restrictions>]
+ 	.restrict <user> +/- <restriction>
+
+	Set/reset user restrictions.
+
+	<restrictions> is a 14-characters string who contain:
+
+	#character                        meaning
+	    G          .go restriction ( the user cannot .go )
+            M          .move restriction ( the user is unmoveable )
+            P          .promote restriction ( the user cannot be promoted )
+            D          .demote restriction ( the user cannot be demoted )
+            Z          .muzzle restriction ( the user cannot be muzzled )
+            U          .unmuzzle restriction (the user cannot be unmuzzled) 
+            K          .kill restriction ( the user cannot be killed )
+            H          .help restriction ( the user cannot access help )
+            S          .suicide restriction ( the user cannot use .suicide )
+            W          .who protection ( the user cannot use .who )
+	    R          .run protection ( the user cannot use .run )
+	    C          .clone protection ( the user cannot use .clone,
+		       .myclones, .allclones ) 	
+	    V	       .review/.revtell protection ( the user cannot review
+			conversation )
+	    X		execute all commands except .say, .quit, .help and
+	    		.suicide		
+
+	The '?' character means same state of restriction (the restriction
+will remain unchanged). Other characters means reset of the restriction...
+
+	To view restrictions use this command without last parameter.
+	To set/reset only one restriction, use the second form of the
+command.
+
+See also: .help commands

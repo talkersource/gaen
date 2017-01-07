@@ -1,0 +1,27 @@
+
+* sweep *
+
+Syntax: sweep ?/<criterion>
+
+	Use this command to delete users or some users' files using certain
+	criteria (you can use abbreviations).
+
+<criterion>				meaning
+level [<level>]		all users of level lower or equal than <level>
+			(default is GUEST)
+noinfo			all users of level GUEST, without profile and .set
+total [<hours>]		all users with total login time lower than <hours>
+			(default value is 1 hour)
+last [<days>]		all users with last login time greater than <days>
+			(default value is 365 days)
+onlymail		only mail files of all users
+onlyenv			only environment files of all users
+onlysubst		only substitution files of all users
+onlyset			only set details files of all users
+onlyprof		only profile files of all users
+onlyrun			only run commands files of all users
+onlyrestr		only restriction files of all users
+
+	To view the list of available criteria, use .sweep ?
+
+See also: .delete

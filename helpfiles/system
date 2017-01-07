@@ -1,0 +1,8 @@
+
+* system *
+
+This shows various system parameters: number of current users and clones, 
+some default parameters, booted time, total memory in use etc.
+
+See also: .param
+

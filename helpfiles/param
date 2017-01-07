@@ -1,0 +1,38 @@
+
+* param *
+
+Syntax: param [ <parameter> <value> ]
+
+	This command shows or changes a talker's parameter 
+	(you can use abbreviations). Use this command very careful!
+	
+	The talker's parameters are:
+	
+	Name		Means			Value
+	
+	col_default	Default colour mode	0..1
+	prompt_default  Default prompt flag	0..1
+	max_users	Max. # of users		>0
+	max_clones	Max. clones/user	>=0
+	idle_tout	User idle time		>=0 sec.
+	remote_max	Remote max. # of users  >=0
+	remote_default  Remote default level	0..8 level
+	stport_level	Level to access st.port 0..8 level
+	autosave_iter	Autosave # iter.	>=0
+	mesg_life	Board mesg. life	>=0 days.
+	safety		Safety delete files	0..1
+	max_quotes	Max. quotes files	>=0
+	max_hints	Max. hints files	>=0
+	no_dis_mirror	No. disable .mirror	0..1
+	hosts_file	Use hosts file flag	0..1
+	words_dict	# of words for Hangman  >0
+	use_ghell	Use .gsh flag		0..1
+	chk_pass	Check secured passwds.	0..3
+	autosave_action Action in autosave	0..3
+	enable_events	Enable events flag	0..1
+	id_readtout	.identify timeout 	>=0 sec.
+	tout_maxlev	Timeout max.level check 0..8 level
+	hint_at_help	Show a hint at help	0..1
+		
+See also: .system
+

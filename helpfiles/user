@@ -1,0 +1,50 @@
+
+~FG~OL--->>> User info <<<---                                      
+
+The access is free, but to have an account new users (GUESTs) must use 
+~FT~OL.accreq~RS command. The users must use ~FT~OL.set~RS to complete their personal 
+information (real name, age, gender, e-mail address and city/country). 
+Also, the users can enter a profile with additional information. This profile 
+is written by user using ~FT~OL.entpro~RS command.
+   
+Each user has a name, a level (GUEST, SOUL, SPARK, SPRITE, ANGEL, SPIRIT,
+SAINT,...), a description (see ~FT~OL.desc~RS), the messages displayed when 
+the user leaves a sky (~FT~OL.outphr~RS) or enters a sky (~FT~OL.inphr~RS). 
+To examine a person, use ~FT~OL.examine~RS command. To view yourself status, 
+use ~FT~OL.status~RS and to view all current users, type ~FT~OL.who~RS or ~FT~OL.people~RS.
+
+For each level, there is a set of commands prefixed by a period. To view 
+the available commands you must type: 
+~FT~OL.help commands~RS or ~FT~OL? commands~RS or just ~FT~OL? c~RS.
+
+You can use abbreviated user names. There are two prefixes you can add in
+front of an user name: '~FY~OL:~RS' to specify the user real name and '~FY~OL$~RS' to ignore 
+the abbreviation facility.  
+
+The users have another attributes: visibility flag (see ~FT~OL.vis~RS and ~FT~OL.invis~RS 
+commands), substituted level and site, Paintball munition, tones for ~FT~OL.tell~RS and 
+~FT~OL.say~RS (see ~FT~OL.tone~RS), a ~FT~OL.whisper~RS users list, two private variables 
+(see ~FT~OL.help gsh~RS for details), stereo voice flag (~FT~OL.stereo~RS), an alarm clock 
+(see ~FT~OL.alarm~RS).   
+   
+Each user may have his/her own defined macros 
+(see ~FT~OL.addmacros~RS, .~FT~OLlmacros~RS, ~FT~OL.umacro~RS, ~FT~OL.dmacro~RS commands).
+   
+Each user is muzzled or not, visible or not, banned or not. For superior 
+levels, an user has one or more clones (~FT~OL.clone~RS).
+   
+The users can send, receive and delete mail - only text (see ~FT~OL.smail~RS, 
+~FT~OL.rmail~RS, ~FT~OL.dmail~RS). The users can talk to all current sky users 
+(~FT~OL.say .emote .shout .mshout .semote .gossip~RS) or to a particular person 
+(~FT~OL.tell .pemote .whisper~RS). Of course, they can ignore ~FT~OL.tell~RS, ~FT~OL.shout~RS 
+commands with ~FT~OL.igntell~RS, ~FT~OL.ignshout~RS. Also, you can ignore certain users or 
+anyone with ~FT~OL.ignore~RS command.
+
+Also, the users can send/receive ASCII fun pictures by using ~FT~OL.picture~RS
+command. To ignore the picture files, use ~FT~OL.ignpict~RS command.
+
+The users can play four interesting games: Hangman, Puzzle, Paintball and Fit.
+For details, see ~FT~OL.hangman~RS, ~FT~OL.puzzle~RS, ~FT~OL.paintball~RS and ~FT~OL.fit~RS help files.
+
+See also: .help ranks, .help commands
+

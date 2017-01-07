@@ -1,0 +1,15 @@
+
+* desc *
+
+Usage: desc [<description>]
+
+This sets the message your description, ie that which follows your name
+when other people view the sky or use the "who" command etc. If you omit the
+description it displays your current one.
+Your description can contain a special pseudo-variable ~OL{name}~RS which
+will be replaced by the user's name who will see your description at .look,
+.status etc. commands.
+
+Example: ~FT.desc loves {name}
+
+See: .outphr, .inphr

@@ -1,0 +1,12 @@
+
+* destroy *
+
+Usage: destroy [<sky> [<owner>]]
+
+This will destroy a clone in a given sky or your current sky if you omit
+the sky name. If you have the required priviledges then you can destroy 
+another users clone by giving the optional owner argument. 
+
+See: .clone, .switch, .allclones, .myclones, .csay, .chear, .kill
+
+

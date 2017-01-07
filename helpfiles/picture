@@ -1,0 +1,11 @@
+
+* picture *
+
+Syntax:    .picture <name> [<user>]
+
+	Send an ASCII picture named <name> to all or a specific user.
+	The picture name and the user name who sent you a picture are
+recorded to a special list (unless you're ignoring pictures).
+
+See also: .help pictures, .ignpict, .revpict
+

@@ -1,0 +1,9 @@
+
+* topic *
+
+Usage: topic [<text>/wipe]
+
+This command set a topic for the current sky. Without parameters, it shows
+the current topic. To wipe the sky's topic, use "wipe" option.
+
+See also: .look, .rmst

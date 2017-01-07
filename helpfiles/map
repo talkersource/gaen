@@ -1,0 +1,8 @@
+
+* map *
+
+Syntax:   map [ all/<dimension> ]
+
+This will show a map of the layout of the talker or all 
+available maps ( dimensions ). The <dimension> is a number between 1 and 3.
+

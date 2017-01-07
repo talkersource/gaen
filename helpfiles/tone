@@ -1,0 +1,23 @@
+
+* tone *
+
+Syntax: .tone <type> [ say/tell ]
+
+	Set your 'tone' of 'voice' when .say/.tell something. If the second
+parameter missing, the tone will be set for both ( .say and .tell ).
+
+	.tone
+	Set the normal 'tone' for .say and .tell.
+
+<type> is:
+0 normal  6 perplex 12 low      18 sarcas 24 fair     30 melt	 36 vivid
+1 acute	  7 melody  13 high     19 sleepy 25 gloom    31 whistle 37 warily
+2 angry	  8 grave   14 innocent 20 polite 26 godly    32 puffy   38 suspic
+3 bash	  9 mega    15 persuas  21 bark   27 irritate 33 puerile 39 shock
+4 perfid 10 sad	    16 kidding  22 hoarse 28 tender   34 grotesq
+5 toady  11 wonder  17 peace    23 rusty  29 spasm    35 verily
+
+	<type> can be a number between 0 and 39 or a word.
+	The <type> codes can be abbreviated.
+
+See also: .say, .tell, .stereo

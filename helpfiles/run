@@ -1,0 +1,10 @@
+* run *
+
+Syntax: run [ in/out/swap/<digit> ]
+
+	Run commands stored in a commands file created by user with .arun
+
+	.run in/out/swap execute commands who normally are executed at
+login/logout/swap time.
+
+See also: .arun, .drun, .event

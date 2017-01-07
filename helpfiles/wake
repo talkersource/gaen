@@ -1,0 +1,10 @@
+
+* wake *
+
+Syntax: .wake <user> [<message>]
+
+This sends a message and a beeping noise to the users terminal hopefully
+attracting his/her attention. 
+
+See also: .btell, .mshout
+

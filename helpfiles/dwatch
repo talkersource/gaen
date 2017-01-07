@@ -1,0 +1,10 @@
+
+* dwatch *
+
+Syntax:  dwatch <user>/all
+
+
+	Delete the entries for this user from the watch list. Use 'all'
+parameter to delete all watch entries.
+
+See also: .watch, .lwatch

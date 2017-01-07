@@ -1,0 +1,12 @@
+
+* unfix *
+
+Usage: unfix [<sky>]
+
+This will unfix a sky's access so that it can then be set to public or private
+using the appropriate commands. If the room is ommited then the users current
+sky is used.
+
+See also: .fix, .public, .private, .show, .hide
+
+

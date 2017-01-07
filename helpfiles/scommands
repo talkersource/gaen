@@ -1,0 +1,22 @@
+
+* scommands *
+
+Syntax: scommands list/reload/erase/<command> <level>
+
+	This powerful command allows you to change the level of
+accessibility for certain commands. Each command is available to be used by
+users of a certain level or higher. 
+	Use .scommands <command> <level> to change this level. You can use:
+
+	.scommands <command> none
+
+	to make the command invisible (unavailable) for all users.
+
+	Your changes will be saved to a special file. To reload it, use
+'reload' parameter and to list all changed access levels and commands, try
+'list' or just '?'. You can erase the commands file using 'erase' parameter.
+	The commands levels file is automatically loaded at the boot time.
+
+See also: .help commands, .help ranks, .system
+
+ 

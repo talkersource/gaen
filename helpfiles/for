@@ -1,0 +1,56 @@
+
+* GSL - For command *
+
+Syntax:  .for <digit> <option>/<list_of_words>
+	 .for <option> : <command>
+	 .for help/?
+
+
+	The purpose of the command is to iterate the execution of a run
+commands file (see the first form) or the execution of a command (see the
+second form). 
+	To view the available options use .for ? or .for help.
+
+Details:
+	.for <digit> users
+
+	This command run commands file <digit> for each logged user. Your {
+variable will contain the user name, so can be used as parameter for your
+commands included in the run commands file.
+
+	.for <digit> dims
+
+	This form run commands file <digit> for each sky of all dimensions.
+Your { variable will contain the sky name.  
+
+	.for <digit> links
+
+	For each connected site, it will be executed run commands file
+<digit>. Your { variable will contain the service name.
+
+	.for <digit> cmds
+
+	For each available command, it will be executed run commands file
+<digit>. Your { variable will contain the command name.
+
+	.for <digit> levels
+
+	For each level, it will be executed run commands file <digit>. 
+Your { variable will contain the level number.
+
+	.for <digit> <list_of_words>
+
+	This command run command file <digit> for all words of list. Your {
+variable will contain for each iteration a word.
+
+	For all cases, at the end of for cycle, the { variable will remain
+unchanged ( the old value, before execution of for, will be restored ).
+	Instead of a run command file, you can execute a command (using the
+second form of .for command).
+
+Examples: .for 2 Fred Julia Yona
+	  .for 0 links
+	  .for users : .promote {
+	  .for dims : .show {
+
+See also: .if, .run, .help gsl

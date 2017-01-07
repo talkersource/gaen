@@ -1,0 +1,3 @@
+~FM~OL>>>Hint:~RS If you put the pseudo-variable {name} in your .desc then
+at each .who or .look the {name} will be replaced by the user name of the
+user who use the command.

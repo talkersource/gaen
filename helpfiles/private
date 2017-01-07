@@ -1,0 +1,8 @@
+
+* private *
+
+This will set a sky to private providing there are enough users in it and
+also that it is not fixed to public.
+
+See also: .public, .invite, .letmein, .fix, .unfix
+

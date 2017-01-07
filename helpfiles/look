@@ -1,0 +1,10 @@
+
+* look *
+
+Syntax: look [ <skyname> ]
+
+Shows the description of the current/specified sky, who is in it, 
+how many messages are on the board and the sky's access.
+
+See also: .people, .who, .rmst, .rmsn
+

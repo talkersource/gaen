@@ -1,0 +1,12 @@
+
+* chear *
+
+Usage: chear <sky> all/swears/nothing
+
+This sets what part of the conversation in the clones sky the clone will
+display to you. "all" makes it show all that is being said and emoted , 
+"swears" will make it just report swearing and "nothing" will force it to 
+ignore everything.
+
+See also: .clone, .destroy, .allclones, .myclones, .csay, .switch
+

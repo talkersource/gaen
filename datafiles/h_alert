@@ -1,0 +1,23 @@
+<title>Sabin's page</title>
+</head>
+<body text="#FFFFFF" background="img/backgr.gif" bgcolor="#000000" link="#C0C0C0" vlink="#C0C000">
+<table>
+<tr>
+<td width=350>
+<img src="img/welcome.gif" alt="Welcome to my page">
+</td>
+<td>
+<table>
+<tr>
+<td width=160>
+<center><a href="mailto:busaco@thor.infoiasi.ro">E-mail me <b>now</b>
+!</a></center></td></tr>
+<td width=160>
+<center><font color="#00FF02" size=+1><i>'Necessity knows no
+law!'</i></font></center>
+</td></tr>
+<tr>
+<td width=160><font color="#00FF0A"><center>SYRUS</center></font></td></tr>
+</td>
+</tr>
+</table>

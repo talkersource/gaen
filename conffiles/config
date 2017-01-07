@@ -1,0 +1,84 @@
+# Main config file - GAEN M (18) - (c)1996-2001 - busaco@infoiasi.ro
+
+INIT:				 # global parameters - init stage 
+				 # (change some of them with .param command)
+verification      GAEN_M18 	 # verification string used in net-links
+mainport          7000		 # talker's main port
+stport            7407		 # talker's superior level user port
+linkport          7001		 # talker's link port to other talkers
+max_users         35		 # max. # of ordinary users
+max_clones        3		 # max. # of clones per user
+heartbeat         2		 # number of heart beats for timing
+login_idle_time   120		 # idle time in login (in sec.)
+user_idle_time    600		 # idle time for an user (in sec.)
+ban_swearing      YES		 # check swearing words
+auto_connect      NO		 # auto-connect to remote talkers at booting
+logging           YES		 # write to log (changed by .logging)
+password_echo     NO		 # show password in login time
+colour_def        ON		 # new users colour flag
+ignore_sigterm    NO		 # ignore termination signal
+prompt_def        OFF		 # new users prompt flag
+minlogin_level    NONE		 # min. level of allowed users (NONE=all)
+mesg_life         7		 # messages' boards expire time (in days)
+mesg_check_time   01:00		 # time when boards are checked (hh:mm)
+min_private       2		 # number of users in private skies
+ignore_mp_level   6		 # min. level to ignore above
+rem_user_maxlevel 6		 # remote user max. level
+rem_user_deflevel 0		 # remote user default level 
+stport_level      6		 # min. level to access superior level port
+gatecrash_level   6		 # level of users who can access special skies
+crash_action      REBOOT	 # if talker is crashing, what action is exec.
+allow_caps_in_name NO		 # if username can contain capitals
+max_hints         130		 # maximum number of hints for .hint
+max_quotes        700		 # maximum number of quotes for .quote
+def_mirror        1		 # default mirror (0=EDEN,1=GAEN,2=HELL,3=DILI)
+safety 	          YES		 # safety remove files (if YES only rename)
+use_hosts_file	  YES		 # use hosts file (see datafiles/hostsfile)
+words_dict	  7927		 # number of words for GAEN Hangman
+gshell		  ON		 # allow gshell commands (.gsh)
+paged_lines	  23    	 # number of paged lines in more() function
+time_out_maxlevel 6		 # maximum level of time-out users
+def_pballs	  9              # default GAEN Paintball munition 
+chk_spass_tests   1		 # check secure passwds tests (0=none..3=paranoid)
+utmpfile	  /var/run/utmp  # utmp file location (for Linux, in this case)
+wtmpfile          /var/log/wtmp  # wtmp file location (for Linux, in this case)
+autosave_action   all		 # performed action: none, quote, greet, all
+enable_events	  ON		 # enable execution of events flag
+susers_restrict   .............. # default restrictions for superior users
+enable_rndgo      OFF		 # enable random .go sky at login time
+random_bhole      ON		 # enable random .bhole at .help commands
+prelog_msgs       3		 # number of prelog messages files
+newuser_deflevel  0		 # default level of new users 
+wrap_cols         80		 # column # for wrapping text
+hint_at_help	  OFF		 # view a hint when using help for a command
+emote_spacer	  NO		 # if add a space to each emote speech 
+accept_prelog_comm YES		 # accept prelogin commands ('who','quit'...)
+allow_born_maxlev YES		 # allow to .born max-level users
+ 
+				 # ROOMSx section 
+ROOMS1:				 # first dimension skies
+tr Truth        kn,de,pe,ch PUB  # label Sky_name adiacent_skies access
+kn Knowledge    tr,jy PUB 
+jy Joy		kn,sa BOTH
+de Desire       tr,sa PUB 
+sa Sadness	de,jy PUB
+pe Perspective  tr,sc BOTH
+ch Chaos	tr,sc BOTH
+sc Sacrifice    pe,ch,fr PUB 
+fr Freedom      sc BOTH
+
+ROOMS2:				 # second dimension skies
+wh White        rd,or,ye,gr,bl,vi PUB
+rd Red          wh,or,vi    BOTH
+or Orange       wh,rd,ye    BOTH
+ye Yellow       wh,or,gr    BOTH
+gr Green        wh,ye,bl    BOTH
+bl Blue         wh,gr,vi    BOTH
+vi Violet       wh,bl,rd    BOTH
+
+ROOMS3:				 # third dimension skies
+sp Space        tm          PRIV
+tm Time         sp          PRIV
+
+# Link to the 2nd talker
+SITES:

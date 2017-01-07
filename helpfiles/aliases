@@ -1,0 +1,19 @@
+
+* aliases *
+
+Syntax: aliases [<alias name> <command>/erase/?]
+
+	You can define your own commands:
+
+	 .alias <alias name> <command>
+
+	Example: .alias ^ .people
+
+	After this, you may try .^ cu execute .people (command period when
+you define a new alias is not mandatory). 
+
+	To view all defined aliases, use .alias ? and to erase all your
+aliases use .alias erase option.
+
+See also: .umacros, .help commands
+	

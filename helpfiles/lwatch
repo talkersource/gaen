@@ -1,0 +1,12 @@
+
+* lwatch *
+
+Syntax: lwatch [ all ]
+
+	Without parameter, the commmand show your watch entries.
+
+	Parameter 'all' will show all entries of watch users list.
+
+See also: .watch, .dwatch
+
+

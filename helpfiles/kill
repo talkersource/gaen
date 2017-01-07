@@ -1,0 +1,23 @@
+ * kill *
+
+Syntax: kill <user> [!/<method>]
+
+	This command kills (unconnect) an user.
+
+methods:	1 - dark voices
+		2 - LINear ACcelerator
+		3 - chainsaw
+		4 - Beelzebub
+		5 - low level format
+		6 - Vixen the Evil witch
+		7 - r00t login/ HDInit
+		8 - the Men in Black / neuraliser
+		9 - virus
+	       11 - SIGSEGV
+	       12 - Jules from PulpFiction (Ezekiel 25:17)
+
+	Instead of a number of method, you can use ! to select a random
+method to kill the user... :)
+
+See also: .suicide, .minlogin, .delete
+

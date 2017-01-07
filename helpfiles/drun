@@ -1,0 +1,10 @@
+
+* drun *
+
+Syntax: drun in/out/normal/swap/<digit>
+
+	Delete a commands file for autorun at login/logout/swap time or 
+	which can be run by the user.
+
+See also: .run, .arun
+

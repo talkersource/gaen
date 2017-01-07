@@ -1,0 +1,10 @@
+
+* shout *
+
+Usage: shout <message>
+
+	This allows you to "shout" to the whole talker.
+
+See also: .say, .tell, .mshout
+
+

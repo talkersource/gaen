@@ -1,0 +1,9 @@
+
+* review *
+
+Syntax: .review [ <sky> ]
+This will show the last few lines of conversation, emoting and echoes that
+took place in the sky which you are. To review the conversation of other
+sky, use .review <sky>.
+
+See also: .revclr, .revtell

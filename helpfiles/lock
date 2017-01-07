@@ -1,0 +1,10 @@
+
+* lock *
+
+Syntax: lock [ <message> ]
+
+	This command locks your session. 
+	Type your password to return to GAEN. Also, instead of your
+	password, you can enter "who" to execute the .who command.
+
+See also: .alert, .alarm, .afk

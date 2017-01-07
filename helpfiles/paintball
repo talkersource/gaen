@@ -1,0 +1,19 @@
+
+* paintball *
+
+Syntax:	paintball [ <user_target> ]
+
+	Rules of the game:
+
+	For each time when you logged on, you have a number of available
+balls to be throwed to some users. Each ball has a randomly generated colour. 
+If the throwed ball has ~FG~OLgreen~RS colour, you win 1 ball and the target
+user looses 1 ball. If the throwed ball has ~FR~OLred~RS colour, you loose 
+2 balls and the target user wins 1 ball. If the throwed ball is ~FB~OLblue~RS,
+both of users win 1 ball. For each throw, you loose 1 ball, of course. 
+	When you loose all your balls, you cannot play this game... until
+to next login... :)
+
+	To view your available balls, use .paintball without any parameter.
+
+See also: .hangman, .puzzle, .fit, .status

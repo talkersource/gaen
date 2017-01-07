@@ -1,0 +1,24 @@
+
+* logging *
+
+Syntax: logging <type> [ erase ]
+
+This is a toggle command that switches logging to the syslog <number> on 
+and off. There are saveral types of log files (chat, err, io, com, link, note, 
+swear, unlink). As 'type' you can enter a number or a symbolic log file
+type:
+
+#     Log file type			Contains
+
+0	chat			important actions and messages
+1	err			error messages 
+2	io			logins/logouts of users
+3	com			effects of some commands
+4	link			linking to other talkers messages
+5	note			.note messages
+6	swear			swearing words and users
+7	unlink			unlinked filenames
+	 
+To erase a log file, use 'erase' option.
+
+See also: .viewlog

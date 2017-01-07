@@ -1,0 +1,17 @@
+
+* examine *
+
+Usage: examine <user>/setmsg [ <text> ]
+
+	This commands shows you the users profile and various 
+	useful statistics relating to his/her current or most recent login.
+
+	Use the 'setmsg' parameter if you want to view/set your examine reply 
+	message which will be sent to the user who .examine/.status you. 
+	Instead of 'setmsg' you can use '=' sign. 
+
+~FGExample:
+	.examine setmsg Hey, you're so curious...
+
+See: .entpro
+

@@ -1,0 +1,10 @@
+
+* read *
+
+Usage: read [<sky>]
+
+This displays the message board of the given sky. If no sky is given it
+defaults to your current sky.
+
+See: .write, .search, .wipe
+

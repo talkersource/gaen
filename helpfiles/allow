@@ -1,0 +1,15 @@
+
+* allow *
+
+Usage: allow <level>/all [ <user> ]
+
+This command allows <user> to have <level> (for SAINTs or higher levels).
+If an user has a level equal or greater than SAINT and the user not exists
+in allow file, that user will be automatically demoted at first login time.
+
+To see the list of allowed users for level <level>, type ".allow <level>"
+
+To allow an user to all levels, use 'all' option.
+
+See also: .dallow
+ 

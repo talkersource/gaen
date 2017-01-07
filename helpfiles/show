@@ -1,0 +1,8 @@
+* show *
+
+Syntax: show [ <sky_name> [ board] ]
+
+	Show a hidden sky.
+        Use option 'board' to show only the message board of a sky.
+
+See also: .hide

@@ -1,0 +1,24 @@
+~FB~OL ---> Country codes <---
+
+There are users from the following countries (and maybe more):
+  The last 2 letters of the hostname represent the country. Hosts ending with 
+  3 letter codes (EDU, COM, NET, etc) are usually in the USA, but may be 
+  anywhere in the world. 
+
+~FTArgentina   (AR)   Australia   (AU)   Austria     (AT)   Belgium	(BE)
+~FGBermuda     (BM)   Brazil      (BR)   Bulgaria    (BG)   Canada		(CA)
+~FTChile 	    (CL)   China       (CN)   Colombia    (CO)   Costa Rica	(CR)
+~FGCroatia     (HR)   Cyprus      (CY)   Czech Rep.  (CZ)   Denmark	(DK)
+~FTEgypt 	    (EG)   Estonia     (EE)   Finland     (FI)   France		(FR)
+~FGGermany     (DE)   Greece      (GR)   Hong Kong   (HK)   Hungary	(HU)
+~FTIceland     (IS)   India       (IN)   Indonesia   (ID)   Ireland	(IE)
+~FGIsrael      (IL)   Italy       (IT)   Jamaica     (JM)   Japan		(JP)
+~FTKorea       (KR)   Kuwait      (KW)   Latvia      (LV)   Lithuania	(LT)
+~FGLuxembourg  (LU)   Macau       (MO)   Malaysia    (MY)   Mexico		(MX)
+~FTNetherlands (NL)   New Zealand (NZ)   Norway      (NO)	 Philippines	(PH)
+~FGPoland      (PL)   Portugal    (PT)   Romania     (RO)   Russia		(RU)
+~FTSingapore   (SG)   Slovakia    (SK)   Slovenia    (SI)   South Africa	(ZA)
+~FGSpain       (ES)   Sweden      (SE)   Switzerland (CH)   Taiwan		(TW)
+~FTThailand    (TH)   Turkey      (TR)   Ukraine     (UA)   United Kindom	(UK)
+~FGUruguay     (UY)   USA         (US)   Venezuela   (VE)
+       

@@ -1,0 +1,20 @@
+
+* alarm *
+
+Syntax: alarm [ <hour> <min> [<command>] ]
+	alarm none
+
+	Set or show the alarm clock, optionally running a command. 
+        <hour> should be between 0 and 23, <min> should be between 0 and 59,
+	an incorrect value will be substituted by current hour/minute.
+	<command> is any legal GAEN command.  
+	You can test the alarm settings by using ".if alarmhour" and 
+	".if alarmmin" conditions.
+
+	To reset the alarm clock, use "alarm none" form.
+
+~FGExamples:
+	.alarm 20 25 .say Hello!
+	.alarm 10 12 .run 6
+
+See also: .alert, .if

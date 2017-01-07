@@ -1,0 +1,7 @@
+
+* ignpict *
+
+This is a toggle command which will switch on or off the ability of other
+users to send you ASCII .pictures.
+
+See: .ignore, .ignshout, .picture, .revpict

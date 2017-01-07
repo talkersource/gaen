@@ -1,0 +1,23 @@
+
+* event *
+
+Syntax: 
+  event none/?
+  event in/out/shout/bhole/bcast/kill/mirror/afk/noafk/swear/swap [<text>]
+
+	This command permits you to define an action which will be executed at
+the time when the login/logout event or the shout/bhole/bcast/kill/mirror 
+commands occured or are used by someone. To view all definitions type .event ?. 
+To erase all definitions use .event none. 
+To define an event you must use the second form of this command.
+
+	The third form is available only for superior users:
+
+event send [in/out/shout/bhole/bcast/kill/mirror/afk/noafk/swear/swap [<val>]] 
+
+	When an event occured, a special variable called * is set to user
+name which sent an event, or to <val> when it is present.
+
+~FGExamples:
+	.event in .tell * How are you today?
+	.event afk .think He, he, you're OK?...

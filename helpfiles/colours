@@ -1,0 +1,32 @@
+~FG--->>> Colours commands <<<---
+
+All the commands start with a ~ and are the following:
+
+RS - reset terminal to default colour status
+RV - reverse video
+OL - bold
+LI - blink/flash text (only the text flashes, not the background colour). 
+     This won't work on all terminals, some xterms simply set it to bold.
+UL - underline text, this doesn't work on all terminals.
+
+FK - set foreground colour to black
+FR - foreground red
+FG - green
+FY - yellow (though it looks an orangey brown on some systems)
+FB - blue
+FM - magenta/purple
+FT - turquoise/bright blue
+FW - white
+
+BK - set background colour to black
+BR - red
+BG - green
+BY - yellow
+BB - blue
+BM - magenta
+BT - turqouise
+BW - white
+
+You can print out colour commands as themselves by prepending them with a
+forward slash '/'.
+

@@ -1,0 +1,11 @@
+
+* btell *
+
+Usage: btell <user> <message>
+
+This allows you to speak privately to another user without having to
+find a private sky. Same as .tell, but every message is followed by a
+short beep. 
+
+See also: .say, .shout, .tell, .pemote
+

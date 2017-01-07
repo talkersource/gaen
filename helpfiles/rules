@@ -1,0 +1,22 @@
+~FB~OL--->>> Talker's rules (draft proposal) <<<---
+
+~OL~FY	* Each user has a free access. Each user must ~FR.set~FY personal details
+~OL~FY(real name, age, gender, e-mail address, country). The e-mail address is
+~OL~FYmandatory. Optionally, an user can complete a profile file (see .entpro).
+~OL~FYEach user has an unique account (except the administrators).
+~OL~FY	* For very known persons, the total login time isn't a criterion for
+~OL~FYpromotions/demotions. 
+~FR~OL	* In this talker, dirty language is not allowed. Bad users will be
+~FR~OLpunished!
+~OL~FY	* Certain sites/users are banned. If you have questions about this,
+~OL~FYplease contact the superior users.
+~OL~FY	* There are some superior levels users. They must mentain the
+~OL~FYinternal order and good behavior of users, they must give .help, but they
+~OL~FYmust not commit excesses or adopt a self-satisfied position!
+~OL~FG	* Change frequently your password using ~FR.passwd~FG command.
+~OL~FYPlease, include special characters and a combination of letters and digits!
+~OL~FY	* If you have problems, please contact superior level users!
+~OL~FYFor programming concerns or bug reports, contact ~OL~FGSabin Corneliu Buraga
+~OL~FG<busaco@infoiasi.ro>~FY.
+
+~OL~FB							Thanks!

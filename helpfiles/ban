@@ -1,0 +1,9 @@
+
+* ban *
+
+Usage: ban site/user <site/user name>
+
+	This command will ban either a site or an user.
+
+See also: .unban, .lban
+

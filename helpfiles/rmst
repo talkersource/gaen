@@ -1,0 +1,10 @@
+
+* rmst *
+
+Syntax: rmst [ <dimension> ]
+
+This shows the list of skies and topics. You can use an additional parameter
+to specify the dimension of skies. Default, it's user's dimension.
+
+See also: .rmsn
+

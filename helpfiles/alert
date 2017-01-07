@@ -1,0 +1,20 @@
+
+* alert *
+
+Syntax:  alert [<type>]
+
+	Enter in alert mode. When your boss stops to watching you, type
+        'y' to exit from this mode.
+
+	<type>			<means>
+
+		c               C source listing
+                p               PASCAL source listing
+                d               dBASE source listing
+                h               HTML source listing
+		a		Assembler source listing
+
+	Default type is 'c'.
+
+See also: .alarm, .afk
+  

@@ -1,0 +1,10 @@
+
+* flash *
+
+Syntax: .flash <user> 
+
+	Send a punishment flash to an impolite user.
+	This command is equivalent with .muzzle, .demote, and .move Sadness
+
+See also: .demote, .kill, .muzzle
+

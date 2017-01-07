@@ -1,0 +1,26 @@
+
+* who*
+
+Syntax:		who [ brief ]
+
+This shows who is logged on and other additional information.
+The signs appearing in front of the usernames have the following meaning:
+
+	number (1..3)	the user is in dimension (n)
+		:       the user is using the editor (composing text)
+		?	the user is idle
+		^	the user .lock-ed the session 
+		!	the user is .alert-ed 
+		~	the user has another name (.rename-d)
+		*	the user is invisible for low level users
+		#	the user is .muzzle-d, he/she cannot speak
+		@	the user is remote connected
+		%	the user is .ignor-ing everyone
+		<	the user has .subst level < real level
+		>	the user has .subst level > real level
+
+To see only users information, you can use "brief" parameter (instead of it,
+you may enter only ".who -").
+
+See also: .people
+

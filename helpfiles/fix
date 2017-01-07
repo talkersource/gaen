@@ -1,0 +1,11 @@
+
+* fix *
+
+Usage: fix [<sky>]
+
+This will fix a sky's access whether it is public or private so that it
+cannot be changed using the public or private commands. If the sky is left
+out then the users current sky is used.
+
+See also: .unfix, .public, .private
+

@@ -1,0 +1,13 @@
+
+* note *
+
+Syntax:	note [ [ ! ] <message> ]
+
+
+	Use this command to send to yourself a message (maybe useful in run
+	commands files).
+
+	.note ! <message> will write the <message> to a special log file.
+	
+See also: .run, .viewlog
+

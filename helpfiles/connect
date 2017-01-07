@@ -1,0 +1,10 @@
+
+* connect *
+
+Usage: connect <sky>
+
+This command tries to make this sky a gateway to another talker by 
+bringing up a netlink. The link must be predefined in the config file.
+
+See also: .disconnect
+

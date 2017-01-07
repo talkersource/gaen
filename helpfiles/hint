@@ -1,0 +1,13 @@
+
+* hint *
+
+Syntax: hint [ auto ]
+
+	Without parameters, .hint shows a randomly hint from a list of hints 
+	about using of certain talker's commands. 
+
+	Using 'auto' parameter, you can control if a hint will be
+	automatically showed or not at each help usage.
+
+See also: .help, .quote
+

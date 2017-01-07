@@ -1,0 +1,7 @@
+
+* save *
+
+Syntax:	.save [<user>]
+
+	Saves to disk the details for an user or for all users 
+	(if you use this command without parameters).

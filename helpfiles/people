@@ -1,0 +1,11 @@
+
+* people *
+
+Syntax:		.people [ brief ]
+
+This shows who is logged on and gives various stats for them. 
+To see only users information, you can use "brief" parameter 
+(instead of ".people brief" you may enter ".people -" construct).
+
+See: .who, .look
+
